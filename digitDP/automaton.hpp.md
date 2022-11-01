@@ -66,8 +66,7 @@ data:
   - test/aoj/0570.test.cpp
 documentation_of: digitDP/automaton.hpp
 layout: document
-redirect_from:
-- /library/digitDP/automaton.hpp
-- /library/digitDP/automaton.hpp.html
-title: digitDP/automaton.hpp
+title: "\u30C6\u30B9\u30C8"
 ---
+
+ここに文章を入力します。

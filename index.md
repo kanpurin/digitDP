@@ -5,7 +5,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: digitDP/automaton.hpp
-      title: digitDP/automaton.hpp
+      title: "\u30C6\u30B9\u30C8"
     - icon: ':heavy_check_mark:'
       path: digitDP/digit_dp_leq.hpp
       title: digitDP/digit_dp_leq.hpp

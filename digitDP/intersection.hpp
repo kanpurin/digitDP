@@ -2,7 +2,7 @@
 #include "digitDP/automaton.hpp"
 
 // どちらにも受理されるような文字列を受理
-Automaton IntersectionAutomaton(const Automaton1 &A, const Automaton2 &B) {
+Automaton IntersectionAutomaton(const Automaton &A, const Automaton &B) {
     assert(A.alphabet_size == B.alphabet_size);
     Automaton M;
     M.alphabet_size = A.alphabet_size;

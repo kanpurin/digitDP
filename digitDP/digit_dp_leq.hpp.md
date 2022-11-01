@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: digitDP/automaton.hpp
     title: digitDP/automaton.hpp
   _extendedRequiredBy: []
@@ -9,9 +9,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0570.test.cpp
     title: test/aoj/0570.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/yukicoder/0315.test.cpp
+    title: test/yukicoder/0315.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"digitDP/digit_dp_leq.hpp\"\n#include <string>\n#line 2 \"\
@@ -60,8 +63,9 @@ data:
   path: digitDP/digit_dp_leq.hpp
   requiredBy: []
   timestamp: '2022-11-02 07:08:37+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/yukicoder/0315.test.cpp
   - test/aoj/0570.test.cpp
 documentation_of: digitDP/digit_dp_leq.hpp
 layout: document

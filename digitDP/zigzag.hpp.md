@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: digitDP/automaton.hpp
     title: digitDP/automaton.hpp
   _extendedRequiredBy: []

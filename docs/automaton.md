@@ -1,6 +1,18 @@
 ---
-title: テスト
+title: オートマトン
 documentation_of: ./digitDP/automaton.hpp
 ---
 
-ここに文章を入力します。
+DFA $A=(Q,Σ,δ,q_0,F)$が受理する長さ$n$の全ての文字列$S$に対して$f(S)$の和を$O(n\cdot|Q|\cdot|Σ|)$で求める。
+
+和といっても+だけでなくmaxとかでもいい。満たすべき条件は以下を参照
+
+- https://kuretchi.github.io/blog/entries/automaton-dp/
+
+### 説明
+- qsize：$|Q|$
+- init：初期状態
+- delta：delta[i][c]=$\delta(i,q)$
+- alphabet_size：$|Σ|$
+- accept：受理状態か
+- reject：受理状態への到達が不可能か(dead-state)

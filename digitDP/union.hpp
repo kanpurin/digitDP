@@ -3,7 +3,6 @@
 #include "digitDP/automaton.hpp"
 
 // どちらかに受理されるような文字列を受理
-// template<class Automaton1, class Automaton2>
 Automaton UnionAutomaton(const Automaton &A, const Automaton &B) {
     assert(A.alphabet_size == B.alphabet_size);
     Automaton M;

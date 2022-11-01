@@ -2,7 +2,6 @@
 #include "digitDP/automaton.hpp"
 
 // どちらにも受理されるような文字列を受理
-template<class Automaton1, class Automaton2>
 Automaton IntersectionAutomaton(const Automaton1 &A, const Automaton2 &B) {
     assert(A.alphabet_size == B.alphabet_size);
     Automaton M;

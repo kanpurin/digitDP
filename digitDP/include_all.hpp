@@ -21,11 +21,10 @@ private:
                 if (state == init && c == 0) delta[state][c] = init;
                 else {
                     delta[state][c] = state==init?0:state;
-                    for (int i = 0; i < elems.size(); i++) {
-                        if (c == elems[i]) {
-                            delta[state][c] = delta[state][c]|1<<i;
-                            break;
-                        }
+                    for (int i = 0; i < (int)elems.size(); i++) {
+                        if (c == elems[i]) continue;
+                        delta[state][c] = delta[state][c]|1<<i;
+                        break;
                     }
                 }
             }

@@ -12,7 +12,7 @@ Automaton UnionAutomaton(const Automaton &A, const Automaton &B) {
     std::vector<int> x = {A.init}, y = {B.init};
     table[x[0]][y[0]] = 0;
     M.init = 0;
-    for (int i = 0; i < x.size(); ++i) {
+    for (int i = 0; i < (int)x.size(); ++i) {
         M.delta.push_back(std::vector<int>(M.alphabet_size, -1));
         M.is_accept.push_back(A.accept(x[i]) || B.accept(y[i]));
         M.is_reject.push_back(A.reject(x[i]) && B.reject(y[i]));

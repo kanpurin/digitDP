@@ -22,7 +22,7 @@ private:
                 else {
                     delta[state][c] = state==init?0:state;
                     for (int i = 0; i < (int)elems.size(); i++) {
-                        if (c == elems[i]) continue;
+                        if (c != elems[i]) continue;
                         delta[state][c] = delta[state][c]|1<<i;
                         break;
                     }

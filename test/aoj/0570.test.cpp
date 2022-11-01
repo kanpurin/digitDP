@@ -8,16 +8,6 @@ using namespace std;
 #include "digitDP/digit_dp_leq.hpp"
 #include "other/mint.hpp"
 
-int main() {
-    string a,b;cin >> a >> b;
-    int m;cin >> m;
-    auto M1 = ZigZagAutomaton();
-    auto M2 = ModuloAutomaton(m);
-    auto M3 = IntersectionAutomaton(M1,M2);
-    cout << digitDP<Monoid>(b,M3).val-digitDP<Monoid>(a,M3,false).val << endl;
-    return 0;
-}
-
 const int MOD = 1e4;
 
 // 受理する文字列の数
@@ -49,3 +39,13 @@ struct Monoid {
         return os << x.val;
     }
 };
+
+int main() {
+    string a,b;cin >> a >> b;
+    int m;cin >> m;
+    auto M1 = ZigZagAutomaton();
+    auto M2 = ModuloAutomaton(m);
+    auto M3 = IntersectionAutomaton(M1,M2);
+    cout << digitDP<Monoid>(b,M3).val-digitDP<Monoid>(a,M3,false).val << endl;
+    return 0;
+}

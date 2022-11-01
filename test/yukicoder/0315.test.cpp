@@ -1,4 +1,4 @@
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/0570"
+#define PROBLEM "https://yukicoder.me/problems/no/315"
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -10,7 +10,7 @@ using namespace std;
 #include "digitDP/digit_dp_leq.hpp"
 #include "other/mint.hpp"
 
-const int MOD = 1e4;
+const int MOD = 1e9 + 7;
 
 // 受理する文字列の数
 struct Monoid {

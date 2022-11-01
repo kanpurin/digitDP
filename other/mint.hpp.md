@@ -6,12 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0570.test.cpp
     title: test/aoj/0570.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/0315.test.cpp
     title: test/yukicoder/0315.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"other/mint.hpp\"\n\ntemplate< int MOD >\nstruct mint {\n\
@@ -98,7 +98,7 @@ data:
   path: other/mint.hpp
   requiredBy: []
   timestamp: '2022-11-02 07:08:37+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/0315.test.cpp
   - test/aoj/0570.test.cpp

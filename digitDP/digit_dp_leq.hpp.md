@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: digitDP/automaton.hpp
     title: digitDP/automaton.hpp
   _extendedRequiredBy: []
@@ -9,12 +9,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0570.test.cpp
     title: test/aoj/0570.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/0315.test.cpp
     title: test/yukicoder/0315.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"digitDP/digit_dp_leq.hpp\"\n#include <string>\n#line 2 \"\
@@ -27,7 +27,7 @@ data:
     \n\n// LeqAutomaton\u4ED8\u304D\u6841DP\ntemplate<typename Monoid>\nMonoid digitDP(const\
     \ std::string &s, const Automaton &dfa, bool eq = 1) {\n    std::vector<std::vector<Monoid>>\
     \ dp(2,std::vector<Monoid>(dfa.size(),Monoid::zero()));\n    dp[1][dfa.init] =\
-    \ Monoid::e();\n    for (int i = 0; i < s.size(); i++) {\n        std::vector<std::vector<Monoid>>\
+    \ Monoid::e();\n    for (int i = 0; i < (int)s.size(); i++) {\n        std::vector<std::vector<Monoid>>\
     \ dp2(2,std::vector<Monoid>(dfa.size(),Monoid::zero()));\n        for (int tight\
     \ = 0; tight <= 1; tight++) {\n            for (int state = 0; state < dfa.size();\
     \ state++) {\n                if (dfa.reject(state) || dp[tight][state].undef)\
@@ -44,7 +44,7 @@ data:
     \ LeqAutomaton\u4ED8\u304D\u6841DP\ntemplate<typename Monoid>\nMonoid digitDP(const\
     \ std::string &s, const Automaton &dfa, bool eq = 1) {\n    std::vector<std::vector<Monoid>>\
     \ dp(2,std::vector<Monoid>(dfa.size(),Monoid::zero()));\n    dp[1][dfa.init] =\
-    \ Monoid::e();\n    for (int i = 0; i < s.size(); i++) {\n        std::vector<std::vector<Monoid>>\
+    \ Monoid::e();\n    for (int i = 0; i < (int)s.size(); i++) {\n        std::vector<std::vector<Monoid>>\
     \ dp2(2,std::vector<Monoid>(dfa.size(),Monoid::zero()));\n        for (int tight\
     \ = 0; tight <= 1; tight++) {\n            for (int state = 0; state < dfa.size();\
     \ state++) {\n                if (dfa.reject(state) || dp[tight][state].undef)\
@@ -62,8 +62,8 @@ data:
   isVerificationFile: false
   path: digitDP/digit_dp_leq.hpp
   requiredBy: []
-  timestamp: '2022-11-02 07:08:37+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-11-02 07:45:23+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/0315.test.cpp
   - test/aoj/0570.test.cpp

@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: digitDP/automaton.hpp
     title: digitDP/automaton.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/0315.test.cpp
     title: test/yukicoder/0315.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"digitDP/automaton.hpp\"\n#include <vector>\n\nstruct Automaton\
@@ -29,15 +29,15 @@ data:
     \        for (int state = 0; state < qsize; state++) {\n            for (int c\
     \ = 0; c < alphabet_size; c++) {\n                if (state == init && c == 0)\
     \ delta[state][c] = init;\n                else {\n                    delta[state][c]\
-    \ = state==init?0:state;\n                    for (int i = 0; i < elems.size();\
-    \ i++) {\n                        if (c == elems[i]) {\n                     \
-    \       delta[state][c] = delta[state][c]|1<<i;\n                            break;\n\
-    \                        }\n                    }\n                }\n       \
-    \     }\n        }\n    }\n\n    void set_is_accept() {\n        is_accept.resize(qsize,false);\n\
-    \        is_accept[(1<<(int)elems.size())-1] = true;\n    }\n\n    void set_is_reject()\
-    \ {\n        is_reject.resize(qsize,false);\n    }\npublic:\n    IncludeAllAutomaton(std::vector<int>\
-    \ elems, int alpha_size = 10) : elems(elems) {\n        alphabet_size = alpha_size;\n\
-    \        initializer();\n    }\n};\n"
+    \ = state==init?0:state;\n                    for (int i = 0; i < (int)elems.size();\
+    \ i++) {\n                        if (c == elems[i]) continue;\n             \
+    \           delta[state][c] = delta[state][c]|1<<i;\n                        break;\n\
+    \                    }\n                }\n            }\n        }\n    }\n\n\
+    \    void set_is_accept() {\n        is_accept.resize(qsize,false);\n        is_accept[(1<<(int)elems.size())-1]\
+    \ = true;\n    }\n\n    void set_is_reject() {\n        is_reject.resize(qsize,false);\n\
+    \    }\npublic:\n    IncludeAllAutomaton(std::vector<int> elems, int alpha_size\
+    \ = 10) : elems(elems) {\n        alphabet_size = alpha_size;\n        initializer();\n\
+    \    }\n};\n"
   code: "#pragma once\n#include \"digitDP/automaton.hpp\"\n\n// elems\u3092\u3059\u3079\
     \u3066\u542B\u3080\u6587\u5B57\u5217\u3092\u53D7\u7406\nstruct IncludeAllAutomaton\
     \ : public Automaton {\nprivate:\n    std::vector<int> elems;\n\n    void initializer()\
@@ -47,22 +47,22 @@ data:
     \        for (int state = 0; state < qsize; state++) {\n            for (int c\
     \ = 0; c < alphabet_size; c++) {\n                if (state == init && c == 0)\
     \ delta[state][c] = init;\n                else {\n                    delta[state][c]\
-    \ = state==init?0:state;\n                    for (int i = 0; i < elems.size();\
-    \ i++) {\n                        if (c == elems[i]) {\n                     \
-    \       delta[state][c] = delta[state][c]|1<<i;\n                            break;\n\
-    \                        }\n                    }\n                }\n       \
-    \     }\n        }\n    }\n\n    void set_is_accept() {\n        is_accept.resize(qsize,false);\n\
-    \        is_accept[(1<<(int)elems.size())-1] = true;\n    }\n\n    void set_is_reject()\
-    \ {\n        is_reject.resize(qsize,false);\n    }\npublic:\n    IncludeAllAutomaton(std::vector<int>\
-    \ elems, int alpha_size = 10) : elems(elems) {\n        alphabet_size = alpha_size;\n\
-    \        initializer();\n    }\n};"
+    \ = state==init?0:state;\n                    for (int i = 0; i < (int)elems.size();\
+    \ i++) {\n                        if (c == elems[i]) continue;\n             \
+    \           delta[state][c] = delta[state][c]|1<<i;\n                        break;\n\
+    \                    }\n                }\n            }\n        }\n    }\n\n\
+    \    void set_is_accept() {\n        is_accept.resize(qsize,false);\n        is_accept[(1<<(int)elems.size())-1]\
+    \ = true;\n    }\n\n    void set_is_reject() {\n        is_reject.resize(qsize,false);\n\
+    \    }\npublic:\n    IncludeAllAutomaton(std::vector<int> elems, int alpha_size\
+    \ = 10) : elems(elems) {\n        alphabet_size = alpha_size;\n        initializer();\n\
+    \    }\n};"
   dependsOn:
   - digitDP/automaton.hpp
   isVerificationFile: false
   path: digitDP/include_all.hpp
   requiredBy: []
-  timestamp: '2022-11-02 07:37:39+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-11-02 07:45:23+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yukicoder/0315.test.cpp
 documentation_of: digitDP/include_all.hpp

@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: digitDP/automaton.hpp
-    title: "\u30C6\u30B9\u30C8"
+    title: "\u30AA\u30FC\u30C8\u30DE\u30C8\u30F3"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -97,8 +97,11 @@ data:
   - test/yukicoder/0315.test.cpp
 documentation_of: digitDP/minimize.hpp
 layout: document
-redirect_from:
-- /library/digitDP/minimize.hpp
-- /library/digitDP/minimize.hpp.html
-title: digitDP/minimize.hpp
+title: "\u72B6\u614B\u6700\u5C0F\u5316"
 ---
+
+DFAを最小化する。
+
+$O(|Q|^2|Σ|)$だが，$|Q|$が大きくなるような問題はほぼないので気にしないでいい。(桁DPの計算量$O(n\cdot|Q|\cdot|Σ|)$で$n$が大きいケースがほとんど)
+
+- https://qiita.com/yohm/items/5cab2a90b7514de3ae06

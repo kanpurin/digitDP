@@ -5,7 +5,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: digitDP/automaton.hpp
-      title: "\u30C6\u30B9\u30C8"
+      title: "\u30AA\u30FC\u30C8\u30DE\u30C8\u30F3"
     - icon: ':heavy_check_mark:'
       path: digitDP/digit_dp_leq.hpp
       title: digitDP/digit_dp_leq.hpp
@@ -17,7 +17,7 @@ data:
       title: digitDP/intersection.hpp
     - icon: ':heavy_check_mark:'
       path: digitDP/minimize.hpp
-      title: digitDP/minimize.hpp
+      title: "\u72B6\u614B\u6700\u5C0F\u5316"
     - icon: ':heavy_check_mark:'
       path: digitDP/modulo.hpp
       title: digitDP/modulo.hpp

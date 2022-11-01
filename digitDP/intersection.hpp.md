@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: digitDP/automaton.hpp
     title: digitDP/automaton.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/0570.test.cpp
     title: test/aoj/0570.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/0315.test.cpp
     title: test/yukicoder/0315.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"digitDP/automaton.hpp\"\n#include <vector>\n\nstruct Automaton\
@@ -25,7 +25,7 @@ data:
     \ state) const { return is_reject[state]; }\n    inline int size() const {return\
     \ qsize; }\n};\n#line 3 \"digitDP/intersection.hpp\"\n\n// \u3069\u3061\u3089\u306B\
     \u3082\u53D7\u7406\u3055\u308C\u308B\u3088\u3046\u306A\u6587\u5B57\u5217\u3092\
-    \u53D7\u7406\nAutomaton IntersectionAutomaton(const Automaton1 &A, const Automaton2\
+    \u53D7\u7406\nAutomaton IntersectionAutomaton(const Automaton &A, const Automaton\
     \ &B) {\n    assert(A.alphabet_size == B.alphabet_size);\n    Automaton M;\n \
     \   M.alphabet_size = A.alphabet_size;\n    std::vector<std::vector<int>> table(A.size(),\
     \ std::vector<int>(B.size(),-1));\n    std::vector<int> x = {A.init}, y = {B.init};\n\
@@ -39,8 +39,8 @@ data:
     \        }\n    }\n    M.qsize = M.delta.size();\n    return M;\n}\n"
   code: "#pragma once\n#include \"digitDP/automaton.hpp\"\n\n// \u3069\u3061\u3089\
     \u306B\u3082\u53D7\u7406\u3055\u308C\u308B\u3088\u3046\u306A\u6587\u5B57\u5217\
-    \u3092\u53D7\u7406\nAutomaton IntersectionAutomaton(const Automaton1 &A, const\
-    \ Automaton2 &B) {\n    assert(A.alphabet_size == B.alphabet_size);\n    Automaton\
+    \u3092\u53D7\u7406\nAutomaton IntersectionAutomaton(const Automaton &A, const\
+    \ Automaton &B) {\n    assert(A.alphabet_size == B.alphabet_size);\n    Automaton\
     \ M;\n    M.alphabet_size = A.alphabet_size;\n    std::vector<std::vector<int>>\
     \ table(A.size(), std::vector<int>(B.size(),-1));\n    std::vector<int> x = {A.init},\
     \ y = {B.init};\n    table[x[0]][y[0]] = 0;\n    M.init = 0;\n    for (int i =\
@@ -57,8 +57,8 @@ data:
   isVerificationFile: false
   path: digitDP/intersection.hpp
   requiredBy: []
-  timestamp: '2022-11-02 07:59:11+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-11-02 08:00:15+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/0315.test.cpp
   - test/aoj/0570.test.cpp

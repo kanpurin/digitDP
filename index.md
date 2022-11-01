@@ -3,25 +3,25 @@ data:
   libraryCategories:
   - name: digitDP
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: digitDP/automaton.hpp
       title: digitDP/automaton.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: digitDP/digit_dp_leq.hpp
       title: digitDP/digit_dp_leq.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: digitDP/include_all.hpp
       title: digitDP/include_all.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: digitDP/intersection.hpp
       title: digitDP/intersection.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: digitDP/minimize.hpp
       title: digitDP/minimize.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: digitDP/modulo.hpp
       title: digitDP/modulo.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: digitDP/union.hpp
       title: digitDP/union.hpp
     - icon: ':heavy_check_mark:'
@@ -29,7 +29,7 @@ data:
       title: digitDP/zigzag.hpp
   - name: other
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: other/mint.hpp
       title: other/mint.hpp
   verificationCategories:
@@ -45,7 +45,7 @@ data:
       title: test/example.test.cpp
   - name: test/yukicoder
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/0315.test.cpp
       title: test/yukicoder/0315.test.cpp
 layout: toppage

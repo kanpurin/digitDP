@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: digitDP/automaton.hpp
     title: digitDP/automaton.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/0315.test.cpp
     title: test/yukicoder/0315.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"digitDP/automaton.hpp\"\n#include <vector>\n\nstruct Automaton\
@@ -30,7 +30,7 @@ data:
     \ = 0; c < alphabet_size; c++) {\n                if (state == init && c == 0)\
     \ delta[state][c] = init;\n                else {\n                    delta[state][c]\
     \ = state==init?0:state;\n                    for (int i = 0; i < (int)elems.size();\
-    \ i++) {\n                        if (c == elems[i]) continue;\n             \
+    \ i++) {\n                        if (c != elems[i]) continue;\n             \
     \           delta[state][c] = delta[state][c]|1<<i;\n                        break;\n\
     \                    }\n                }\n            }\n        }\n    }\n\n\
     \    void set_is_accept() {\n        is_accept.resize(qsize,false);\n        is_accept[(1<<(int)elems.size())-1]\
@@ -48,7 +48,7 @@ data:
     \ = 0; c < alphabet_size; c++) {\n                if (state == init && c == 0)\
     \ delta[state][c] = init;\n                else {\n                    delta[state][c]\
     \ = state==init?0:state;\n                    for (int i = 0; i < (int)elems.size();\
-    \ i++) {\n                        if (c == elems[i]) continue;\n             \
+    \ i++) {\n                        if (c != elems[i]) continue;\n             \
     \           delta[state][c] = delta[state][c]|1<<i;\n                        break;\n\
     \                    }\n                }\n            }\n        }\n    }\n\n\
     \    void set_is_accept() {\n        is_accept.resize(qsize,false);\n        is_accept[(1<<(int)elems.size())-1]\
@@ -61,8 +61,8 @@ data:
   isVerificationFile: false
   path: digitDP/include_all.hpp
   requiredBy: []
-  timestamp: '2022-11-02 07:45:23+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-11-02 07:52:10+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/0315.test.cpp
 documentation_of: digitDP/include_all.hpp

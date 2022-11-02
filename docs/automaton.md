@@ -7,7 +7,7 @@ DFA $A=(Q,Σ,δ,q_0,F)$が受理する長さ$n$の全ての文字列$S$に対し
 
 和といっても+だけでなくmaxとかでもいい。満たすべき条件は以下を参照
 
-- https://kuretchi.github.io/blog/entries/automaton-dp/
+- [https://kuretchi.github.io/blog/entries/automaton-dp/](https://kuretchi.github.io/blog/entries/automaton-dp/)
 
 ### 説明
 - qsize：$\lvert Q\rvert$

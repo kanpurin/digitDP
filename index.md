@@ -3,13 +3,13 @@ data:
   libraryCategories:
   - name: digitDP
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: digitDP/automaton.hpp
       title: "\u30AA\u30FC\u30C8\u30DE\u30C8\u30F3"
-    - icon: ':x:'
+    - icon: ':warning:'
       path: digitDP/count_number.hpp
       title: digitDP/count_number.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: digitDP/digit_dp_leq.hpp
       title: digitDP/digit_dp_leq.hpp
     - icon: ':heavy_check_mark:'
@@ -38,7 +38,7 @@ data:
       title: digitDP/zigzag.hpp
   - name: other
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: other/mint.hpp
       title: other/mint.hpp
   verificationCategories:
@@ -47,11 +47,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/0570.test.cpp
       title: test/aoj/0570.test.cpp
-  - name: test/atcoder
-    pages:
-    - icon: ':x:'
-      path: test/atcoder/abc154_e.test.cpp
-      title: test/atcoder/abc154_e.test.cpp
   - name: test/yukicoder
     pages:
     - icon: ':heavy_check_mark:'

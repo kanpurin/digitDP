@@ -44,11 +44,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/0570.test.cpp
       title: test/aoj/0570.test.cpp
-  - name: test
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: test/example.test.cpp
-      title: test/example.test.cpp
   - name: test/yukicoder
     pages:
     - icon: ':heavy_check_mark:'

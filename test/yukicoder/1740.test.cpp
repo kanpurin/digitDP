@@ -6,7 +6,7 @@ using namespace std;
 #include "digitDP/count_number.hpp"
 #include "other/mint.hpp"
 
-const int MOD = 1e9 + 7;
+const int MOD = 998244353;
 
 // 受理する文字列の数
 struct Monoid {

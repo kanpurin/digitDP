@@ -11,8 +11,8 @@ private:
 
     void initializer() { 
         assert(flg.size() == alphabet_size);
-        qsize = num+2;
-        init = 0;
+        qsize = num+3;
+        init = num+2;
         set_delta();
         set_is_accept();
         set_is_reject();
@@ -23,6 +23,7 @@ private:
         for (int state = 0; state < qsize; state++) {
             for (int c = 0; c < alphabet_size; c++) {
                 if (state == init && c == 0) delta[state][c] = init;
+                else if (state == init) delta[state][c] = flg[c]?1:0;
                 else if (state == num+1) delta[state][c] = state;
                 else delta[state][c] = flg[c]?state+1:state;
             }
@@ -30,10 +31,13 @@ private:
     }
 
     void set_is_accept() {
-        is_accept.resize(qsize);
-        for (int state = 0; state < qsize; state++) {
-            if (eq) is_accept[state] = state == num;
-            else is_accept[state] = state <= num;
+        is_accept.resize(qsize,false);
+        if (eq) is_accept[num] = true;
+        else {
+            for (int state = 0; state <= num; state++) {
+                is_accept[state] = true;
+            }
+            is_accept[num+2] = true;
         }
     }
 

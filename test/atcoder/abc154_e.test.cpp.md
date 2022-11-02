@@ -20,40 +20,38 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    IGNORE: ''
-    IGNORE_IF_CLANG: ''
-    IGNORE_IF_GCC: ''
+    PROBLEM: https://atcoder.jp/contests/abc154/tasks/abc154_e
     links:
     - https://atcoder.jp/contests/abc154/tasks/abc154_e
-  bundledCode: "#line 1 \"test/atcoder/abc154_e.test.cpp\"\n#define IGNORE\n#define\
-    \ PROBLEM \"https://atcoder.jp/contests/abc154/tasks/abc154_e\"\n#include <bits/stdc++.h>\n\
-    using namespace std;\n\n#line 3 \"digitDP/automaton.hpp\"\n\nstruct Automaton\
-    \ {\n    std::vector<std::vector<int>> delta;\n    std::vector<bool> is_accept,\
-    \ is_reject;\n    int qsize;\n    int init;\n    int alphabet_size = 10;\n   \
-    \ inline int next(int state, int c) const { return delta[state][c]; }\n    inline\
-    \ bool accept(int state) const { return is_accept[state]; }\n    inline bool reject(int\
-    \ state) const { return is_reject[state]; }\n    inline int size() const {return\
-    \ qsize; }\n};\n#line 4 \"digitDP/digit_dp_leq.hpp\"\n\n// LeqAutomaton\u4ED8\u304D\
-    \u6841DP\ntemplate<typename Monoid>\nMonoid digitDP(const std::string &s, const\
-    \ Automaton &dfa, bool eq = 1) {\n    std::vector<std::vector<Monoid>> dp(2,std::vector<Monoid>(dfa.size(),Monoid::zero()));\n\
-    \    dp[1][dfa.init] = Monoid::e();\n    for (int i = 0; i < (int)s.size(); i++)\
-    \ {\n        std::vector<std::vector<Monoid>> dp2(2,std::vector<Monoid>(dfa.size(),Monoid::zero()));\n\
-    \        for (int tight = 0; tight <= 1; tight++) {\n            for (int state\
-    \ = 0; state < dfa.size(); state++) {\n                if (dfa.reject(state) ||\
-    \ dp[tight][state].undef) continue;\n                int lim = (tight ? s[i] -\
-    \ '0' : dfa.alphabet_size - 1);\n                for (int c = 0; c <= lim; c++)\
-    \ {\n                    int tight_ = tight && c == lim;\n                   \
-    \ int state_ = dfa.next(state,c);\n                    if (dfa.reject(state_))\
-    \ continue;\n                    dp2[tight_][state_] += dp[tight][state]*c;\n\
-    \                }\n            }\n        }\n        dp = move(dp2);\n    }\n\
-    \    Monoid ans = Monoid::zero();\n    for (int tight = 0; tight <= eq; tight++)\n\
-    \        for (int state = 0; state < dfa.size(); state++)\n            if (dfa.accept(state))\
-    \ ans += dp[tight][state];\n    return ans;\n}\n#line 4 \"digitDP/count_number.hpp\"\
-    \n\n// \u7279\u5B9A\u306E\u6570\u5B57\u304CN\u56DE(eq?\u4E01\u5EA6:\u4EE5\u4E0B\
-    )\u542B\u307E\u308C\u308B\u6587\u5B57\u5217\u3092\u53D7\u7406\nstruct CountNumberAutomaton\
-    \ : public Automaton {\nprivate:\n    std::vector<bool> flg;\n    int num;\n \
-    \   bool eq;\n\n    void initializer() { \n        assert(flg.size() == alphabet_size);\n\
-    \        qsize = num+2;\n        init = 0;\n        set_delta();\n        set_is_accept();\n\
+  bundledCode: "#line 1 \"test/atcoder/abc154_e.test.cpp\"\n#define PROBLEM \"https://atcoder.jp/contests/abc154/tasks/abc154_e\"\
+    \n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 3 \"digitDP/automaton.hpp\"\
+    \n\nstruct Automaton {\n    std::vector<std::vector<int>> delta;\n    std::vector<bool>\
+    \ is_accept, is_reject;\n    int qsize;\n    int init;\n    int alphabet_size\
+    \ = 10;\n    inline int next(int state, int c) const { return delta[state][c];\
+    \ }\n    inline bool accept(int state) const { return is_accept[state]; }\n  \
+    \  inline bool reject(int state) const { return is_reject[state]; }\n    inline\
+    \ int size() const {return qsize; }\n};\n#line 4 \"digitDP/digit_dp_leq.hpp\"\n\
+    \n// LeqAutomaton\u4ED8\u304D\u6841DP\ntemplate<typename Monoid>\nMonoid digitDP(const\
+    \ std::string &s, const Automaton &dfa, bool eq = 1) {\n    std::vector<std::vector<Monoid>>\
+    \ dp(2,std::vector<Monoid>(dfa.size(),Monoid::zero()));\n    dp[1][dfa.init] =\
+    \ Monoid::e();\n    for (int i = 0; i < (int)s.size(); i++) {\n        std::vector<std::vector<Monoid>>\
+    \ dp2(2,std::vector<Monoid>(dfa.size(),Monoid::zero()));\n        for (int tight\
+    \ = 0; tight <= 1; tight++) {\n            for (int state = 0; state < dfa.size();\
+    \ state++) {\n                if (dfa.reject(state) || dp[tight][state].undef)\
+    \ continue;\n                int lim = (tight ? s[i] - '0' : dfa.alphabet_size\
+    \ - 1);\n                for (int c = 0; c <= lim; c++) {\n                  \
+    \  int tight_ = tight && c == lim;\n                    int state_ = dfa.next(state,c);\n\
+    \                    if (dfa.reject(state_)) continue;\n                    dp2[tight_][state_]\
+    \ += dp[tight][state]*c;\n                }\n            }\n        }\n      \
+    \  dp = move(dp2);\n    }\n    Monoid ans = Monoid::zero();\n    for (int tight\
+    \ = 0; tight <= eq; tight++)\n        for (int state = 0; state < dfa.size();\
+    \ state++)\n            if (dfa.accept(state)) ans += dp[tight][state];\n    return\
+    \ ans;\n}\n#line 4 \"digitDP/count_number.hpp\"\n\n// \u7279\u5B9A\u306E\u6570\
+    \u5B57\u304CN\u56DE(eq?\u4E01\u5EA6:\u4EE5\u4E0B)\u542B\u307E\u308C\u308B\u6587\
+    \u5B57\u5217\u3092\u53D7\u7406\nstruct CountNumberAutomaton : public Automaton\
+    \ {\nprivate:\n    std::vector<bool> flg;\n    int num;\n    bool eq;\n\n    void\
+    \ initializer() { \n        assert(flg.size() == alphabet_size);\n        qsize\
+    \ = num+2;\n        init = 0;\n        set_delta();\n        set_is_accept();\n\
     \        set_is_reject();\n    }\n\n    void set_delta() {\n        delta.resize(qsize,std::vector<int>(alphabet_size));\n\
     \        for (int state = 0; state < qsize; state++) {\n            for (int c\
     \ = 0; c < alphabet_size; c++) {\n                if (state == init && c == 0)\
@@ -107,7 +105,7 @@ data:
     \        while (y.x != 1) {\n            int j = 0;\n            mint t = y;\n\
     \            while (t != one) j += 1, t *= t;\n            z = z.pow(1LL << (e-j-1));\n\
     \            x *= z; z *= z; y *= z; e = j;\n        }\n        return x;\n  \
-    \  }\n};\n#line 9 \"test/atcoder/abc154_e.test.cpp\"\n\n// \u53D7\u7406\u3059\u308B\
+    \  }\n};\n#line 8 \"test/atcoder/abc154_e.test.cpp\"\n\n// \u53D7\u7406\u3059\u308B\
     \u6587\u5B57\u5217\u306E\u6570\nstruct Monoid {\n    using T = long long;\n  \
     \  T val;\n    bool undef = true;\n    Monoid() { *this = zero(); }\n    Monoid(T\
     \ val, bool undef = true) : val(val),\n                                      \
@@ -122,8 +120,8 @@ data:
     \ const Monoid &x) {\n        return os << x.val;\n    }\n};\n\nint main() {\n\
     \    string n;cin >> n;\n    int k;cin >> k;\n    auto M1 = CountNumberAutomaton({0,1,1,1,1,1,1,1,1,1},k,true);\n\
     \    cout << digitDP<Monoid>(n,M1) << endl;\n    return 0;\n}\n"
-  code: "#define IGNORE\n#define PROBLEM \"https://atcoder.jp/contests/abc154/tasks/abc154_e\"\
-    \n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"digitDP/digit_dp_leq.hpp\"\
+  code: "#define PROBLEM \"https://atcoder.jp/contests/abc154/tasks/abc154_e\"\n#include\
+    \ <bits/stdc++.h>\nusing namespace std;\n\n#include \"digitDP/digit_dp_leq.hpp\"\
     \n#include \"digitDP/count_number.hpp\"\n#include \"other/mint.hpp\"\n\n// \u53D7\
     \u7406\u3059\u308B\u6587\u5B57\u5217\u306E\u6570\nstruct Monoid {\n    using T\
     \ = long long;\n    T val;\n    bool undef = true;\n    Monoid() { *this = zero();\
@@ -147,7 +145,7 @@ data:
   isVerificationFile: true
   path: test/atcoder/abc154_e.test.cpp
   requiredBy: []
-  timestamp: '2022-11-03 06:58:56+09:00'
+  timestamp: '2022-11-03 07:18:44+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/atcoder/abc154_e.test.cpp

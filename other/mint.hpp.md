@@ -9,6 +9,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0315.test.cpp
     title: test/yukicoder/0315.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/1417.test.cpp
+    title: test/yukicoder/1417.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -100,6 +103,7 @@ data:
   timestamp: '2022-11-02 07:08:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yukicoder/1417.test.cpp
   - test/yukicoder/0315.test.cpp
   - test/aoj/0570.test.cpp
 documentation_of: other/mint.hpp

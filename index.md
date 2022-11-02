@@ -10,6 +10,9 @@ data:
       path: digitDP/digit_dp_leq.hpp
       title: digitDP/digit_dp_leq.hpp
     - icon: ':heavy_check_mark:'
+      path: digitDP/forbidden.hpp
+      title: digitDP/forbidden.hpp
+    - icon: ':heavy_check_mark:'
       path: digitDP/include_all.hpp
       title: digitDP/include_all.hpp
     - icon: ':heavy_check_mark:'
@@ -21,6 +24,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: digitDP/modulo.hpp
       title: digitDP/modulo.hpp
+    - icon: ':heavy_check_mark:'
+      path: digitDP/prod_of_digits.hpp
+      title: digitDP/prod_of_digits.hpp
     - icon: ':heavy_check_mark:'
       path: digitDP/union.hpp
       title: digitDP/union.hpp
@@ -48,5 +54,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/0315.test.cpp
       title: test/yukicoder/0315.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/1417.test.cpp
+      title: test/yukicoder/1417.test.cpp
 layout: toppage
 ---

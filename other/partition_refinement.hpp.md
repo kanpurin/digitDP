@@ -2,16 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: digitDP/minimize.hpp
     title: "\u72B6\u614B\u6700\u5C0F\u5316"
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/0315.test.cpp
     title: test/yukicoder/0315.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"other/partition_refinement.hpp\"\n#include <unordered_map>\n\
@@ -59,7 +59,7 @@ data:
   requiredBy:
   - digitDP/minimize.hpp
   timestamp: '2022-11-04 09:42:55+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/0315.test.cpp
 documentation_of: other/partition_refinement.hpp

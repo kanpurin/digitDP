@@ -5,28 +5,28 @@ data:
   - icon: ':heavy_check_mark:'
     path: digitDP/count_number.hpp
     title: digitDP/count_number.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: digitDP/digit_dp_leq.hpp
     title: digitDP/digit_dp_leq.hpp
   - icon: ':heavy_check_mark:'
     path: digitDP/forbidden.hpp
     title: digitDP/forbidden.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: digitDP/include_all.hpp
     title: digitDP/include_all.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: digitDP/intersection.hpp
     title: digitDP/intersection.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: digitDP/minimize.hpp
     title: "\u72B6\u614B\u6700\u5C0F\u5316"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: digitDP/modulo.hpp
     title: digitDP/modulo.hpp
   - icon: ':heavy_check_mark:'
     path: digitDP/prod_of_digits.hpp
     title: digitDP/prod_of_digits.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: digitDP/union.hpp
     title: digitDP/union.hpp
   - icon: ':heavy_check_mark:'
@@ -36,7 +36,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0570.test.cpp
     title: test/aoj/0570.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/0315.test.cpp
     title: test/yukicoder/0315.test.cpp
   - icon: ':heavy_check_mark:'
@@ -45,9 +45,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1740.test.cpp
     title: test/yukicoder/1740.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"digitDP/automaton.hpp\"\n#include <vector>\n\nstruct Automaton\
@@ -78,7 +78,7 @@ data:
   - digitDP/prod_of_digits.hpp
   - digitDP/zigzag.hpp
   timestamp: '2022-11-02 07:08:37+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1417.test.cpp
   - test/yukicoder/1740.test.cpp

@@ -18,6 +18,9 @@ data:
     path: digitDP/intersection.hpp
     title: digitDP/intersection.hpp
   - icon: ':heavy_check_mark:'
+    path: digitDP/kadomatsu.hpp
+    title: digitDP/kadomatsu.hpp
+  - icon: ':heavy_check_mark:'
     path: digitDP/minimize.hpp
     title: "\u72B6\u614B\u6700\u5C0F\u5316"
   - icon: ':heavy_check_mark:'
@@ -39,6 +42,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0315.test.cpp
     title: test/yukicoder/0315.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/0362.test.cpp
+    title: test/yukicoder/0362.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1417.test.cpp
     title: test/yukicoder/1417.test.cpp
@@ -68,6 +74,7 @@ data:
   path: digitDP/automaton.hpp
   requiredBy:
   - digitDP/intersection.hpp
+  - digitDP/kadomatsu.hpp
   - digitDP/digit_dp_leq.hpp
   - digitDP/union.hpp
   - digitDP/forbidden.hpp
@@ -81,6 +88,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1417.test.cpp
+  - test/yukicoder/0362.test.cpp
   - test/yukicoder/1740.test.cpp
   - test/yukicoder/0315.test.cpp
   - test/aoj/0570.test.cpp

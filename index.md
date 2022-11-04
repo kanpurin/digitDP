@@ -22,6 +22,9 @@ data:
       path: digitDP/intersection.hpp
       title: digitDP/intersection.hpp
     - icon: ':heavy_check_mark:'
+      path: digitDP/kadomatsu.hpp
+      title: digitDP/kadomatsu.hpp
+    - icon: ':heavy_check_mark:'
       path: digitDP/minimize.hpp
       title: "\u72B6\u614B\u6700\u5C0F\u5316"
     - icon: ':heavy_check_mark:'
@@ -55,6 +58,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/0315.test.cpp
       title: test/yukicoder/0315.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/0362.test.cpp
+      title: test/yukicoder/0362.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1417.test.cpp
       title: test/yukicoder/1417.test.cpp

@@ -7,6 +7,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/yukicoder/0362.test.cpp
+    title: test/yukicoder/0362.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1740.test.cpp
     title: test/yukicoder/1740.test.cpp
   _isVerificationFailed: false
@@ -76,6 +79,7 @@ data:
   timestamp: '2022-11-03 08:45:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yukicoder/0362.test.cpp
   - test/yukicoder/1740.test.cpp
 documentation_of: digitDP/count_number.hpp
 layout: document

@@ -13,6 +13,9 @@ data:
     path: test/yukicoder/0315.test.cpp
     title: test/yukicoder/0315.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yukicoder/0362.test.cpp
+    title: test/yukicoder/0362.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1417.test.cpp
     title: test/yukicoder/1417.test.cpp
   - icon: ':heavy_check_mark:'
@@ -72,6 +75,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1417.test.cpp
+  - test/yukicoder/0362.test.cpp
   - test/yukicoder/1740.test.cpp
   - test/yukicoder/0315.test.cpp
   - test/aoj/0570.test.cpp

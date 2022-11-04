@@ -5,21 +5,33 @@ data:
   - icon: ':heavy_check_mark:'
     path: digitDP/count_number.hpp
     title: digitDP/count_number.hpp
+  - icon: ':warning:'
+    path: digitDP/digit_dp_adfa.hpp
+    title: digitDP/digit_dp_adfa.hpp
   - icon: ':heavy_check_mark:'
     path: digitDP/digit_dp_leq.hpp
     title: digitDP/digit_dp_leq.hpp
   - icon: ':heavy_check_mark:'
     path: digitDP/forbidden.hpp
     title: digitDP/forbidden.hpp
+  - icon: ':warning:'
+    path: digitDP/geq_adfa.hpp
+    title: digitDP/geq_adfa.hpp
   - icon: ':heavy_check_mark:'
     path: digitDP/include_all.hpp
     title: digitDP/include_all.hpp
   - icon: ':heavy_check_mark:'
     path: digitDP/intersection.hpp
     title: digitDP/intersection.hpp
+  - icon: ':warning:'
+    path: digitDP/intersection_adfa.hpp
+    title: digitDP/intersection_adfa.hpp
   - icon: ':heavy_check_mark:'
     path: digitDP/kadomatsu.hpp
     title: digitDP/kadomatsu.hpp
+  - icon: ':warning:'
+    path: digitDP/leq_adfa.hpp
+    title: digitDP/leq_adfa.hpp
   - icon: ':heavy_check_mark:'
     path: digitDP/minimize.hpp
     title: "\u72B6\u614B\u6700\u5C0F\u5316"
@@ -80,7 +92,11 @@ data:
   - digitDP/forbidden.hpp
   - digitDP/minimize.hpp
   - digitDP/modulo.hpp
+  - digitDP/intersection_adfa.hpp
+  - digitDP/leq_adfa.hpp
   - digitDP/include_all.hpp
+  - digitDP/digit_dp_adfa.hpp
+  - digitDP/geq_adfa.hpp
   - digitDP/count_number.hpp
   - digitDP/prod_of_digits.hpp
   - digitDP/zigzag.hpp

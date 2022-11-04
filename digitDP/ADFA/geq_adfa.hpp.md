@@ -11,18 +11,18 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"digitDP/geq_adfa.hpp\"\n#include <string>\n#include <cassert>\n\
-    #line 2 \"digitDP/automaton.hpp\"\n#include <vector>\n\nstruct Automaton {\n \
-    \   std::vector<std::vector<int>> delta;\n    std::vector<bool> is_accept, is_reject;\n\
-    \    int qsize;\n    int init;\n    int alphabet_size = 10;\n    inline int next(int\
-    \ state, int c) const { return delta[state][c]; }\n    inline bool accept(int\
-    \ state) const { return is_accept[state]; }\n    inline bool reject(int state)\
-    \ const { return is_reject[state]; }\n    inline int size() const {return qsize;\
-    \ }\n};\n#line 5 \"digitDP/geq_adfa.hpp\"\n\n// \u8F9E\u66F8\u9806s\u4EE5\u4E0A\
-    \u306E\u9577\u3055|s|\u306E\u6587\u5B57\u5217\u3092\u53D7\u7406\n// ADFA\nstruct\
-    \ GeqADFA : public Automaton {\nprivate:\n    std::string str;\n    bool eq;\n\
-    \n    void initializer() { \n        qsize = (str.size()+1)*2;\n        init =\
-    \ 0;\n        set_delta();\n        set_is_accept();\n        set_is_reject();\n\
+  bundledCode: "#line 2 \"digitDP/ADFA/geq_adfa.hpp\"\n#include <string>\n#include\
+    \ <cassert>\n#line 2 \"digitDP/automaton.hpp\"\n#include <vector>\n\nstruct Automaton\
+    \ {\n    std::vector<std::vector<int>> delta;\n    std::vector<bool> is_accept,\
+    \ is_reject;\n    int qsize;\n    int init;\n    int alphabet_size = 10;\n   \
+    \ inline int next(int state, int c) const { return delta[state][c]; }\n    inline\
+    \ bool accept(int state) const { return is_accept[state]; }\n    inline bool reject(int\
+    \ state) const { return is_reject[state]; }\n    inline int size() const {return\
+    \ qsize; }\n};\n#line 5 \"digitDP/ADFA/geq_adfa.hpp\"\n\n// \u8F9E\u66F8\u9806\
+    s\u4EE5\u4E0A\u306E\u9577\u3055|s|\u306E\u6587\u5B57\u5217\u3092\u53D7\u7406\n\
+    // ADFA\nstruct GeqADFA : public Automaton {\nprivate:\n    std::string str;\n\
+    \    bool eq;\n\n    void initializer() { \n        qsize = (str.size()+1)*2;\n\
+    \        init = 0;\n        set_delta();\n        set_is_accept();\n        set_is_reject();\n\
     \    }\n\n    void set_delta() {\n        delta.resize(qsize,std::vector<int>(alphabet_size,0));\n\
     \        for (int i = 0; i < str.size(); i++) {\n            int state = i<<1;\n\
     \            delta[state][str[i]-'0'] = state+2;\n            for (int c = 0;\
@@ -63,15 +63,15 @@ data:
   dependsOn:
   - digitDP/automaton.hpp
   isVerificationFile: false
-  path: digitDP/geq_adfa.hpp
+  path: digitDP/ADFA/geq_adfa.hpp
   requiredBy: []
-  timestamp: '2022-11-05 08:40:29+09:00'
+  timestamp: '2022-11-05 08:49:24+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: digitDP/geq_adfa.hpp
+documentation_of: digitDP/ADFA/geq_adfa.hpp
 layout: document
 redirect_from:
-- /library/digitDP/geq_adfa.hpp
-- /library/digitDP/geq_adfa.hpp.html
-title: digitDP/geq_adfa.hpp
+- /library/digitDP/ADFA/geq_adfa.hpp
+- /library/digitDP/ADFA/geq_adfa.hpp.html
+title: digitDP/ADFA/geq_adfa.hpp
 ---

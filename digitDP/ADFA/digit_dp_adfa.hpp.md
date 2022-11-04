@@ -17,13 +17,13 @@ data:
     \ inline int next(int state, int c) const { return delta[state][c]; }\n    inline\
     \ bool accept(int state) const { return is_accept[state]; }\n    inline bool reject(int\
     \ state) const { return is_reject[state]; }\n    inline int size() const {return\
-    \ qsize; }\n};\n#line 3 \"digitDP/digit_dp_adfa.hpp\"\n\ntemplate<typename Monoid>\n\
-    Monoid digitDP(Automaton &adfa) {\n    assert(adfa.init == 0);\n    std::vector<Monoid>\
-    \ dp(adfa.size());\n    dp[adfa.init] = Monoid::e();\n    Monoid ans;\n    for\
-    \ (int state = 0; state < adfa.size(); state++) {\n        if (adfa.reject(state))\
-    \ continue;\n        for (int c = 0; c < adfa.alphabet_size; c++) {\n        \
-    \    dp[adfa.next(state,c)] += dp[state]*c;\n        }\n        if (adfa.accept(state))\
-    \ ans += dp[state];\n    }\n    return ans;\n}\n"
+    \ qsize; }\n};\n#line 3 \"digitDP/ADFA/digit_dp_adfa.hpp\"\n\ntemplate<typename\
+    \ Monoid>\nMonoid digitDP(Automaton &adfa) {\n    assert(adfa.init == 0);\n  \
+    \  std::vector<Monoid> dp(adfa.size());\n    dp[adfa.init] = Monoid::e();\n  \
+    \  Monoid ans;\n    for (int state = 0; state < adfa.size(); state++) {\n    \
+    \    if (adfa.reject(state)) continue;\n        for (int c = 0; c < adfa.alphabet_size;\
+    \ c++) {\n            dp[adfa.next(state,c)] += dp[state]*c;\n        }\n    \
+    \    if (adfa.accept(state)) ans += dp[state];\n    }\n    return ans;\n}\n"
   code: "#pragma once\n#include \"digitDP/automaton.hpp\"\n\ntemplate<typename Monoid>\n\
     Monoid digitDP(Automaton &adfa) {\n    assert(adfa.init == 0);\n    std::vector<Monoid>\
     \ dp(adfa.size());\n    dp[adfa.init] = Monoid::e();\n    Monoid ans;\n    for\
@@ -34,15 +34,15 @@ data:
   dependsOn:
   - digitDP/automaton.hpp
   isVerificationFile: false
-  path: digitDP/digit_dp_adfa.hpp
+  path: digitDP/ADFA/digit_dp_adfa.hpp
   requiredBy: []
-  timestamp: '2022-11-05 08:38:53+09:00'
+  timestamp: '2022-11-05 08:49:24+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: digitDP/digit_dp_adfa.hpp
+documentation_of: digitDP/ADFA/digit_dp_adfa.hpp
 layout: document
 redirect_from:
-- /library/digitDP/digit_dp_adfa.hpp
-- /library/digitDP/digit_dp_adfa.hpp.html
-title: digitDP/digit_dp_adfa.hpp
+- /library/digitDP/ADFA/digit_dp_adfa.hpp
+- /library/digitDP/ADFA/digit_dp_adfa.hpp.html
+title: digitDP/ADFA/digit_dp_adfa.hpp
 ---

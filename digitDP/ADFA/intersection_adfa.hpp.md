@@ -11,14 +11,14 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"digitDP/intersection_adfa.hpp\"\n#include <cassert>\n#include\
-    \ <tuple>\n#include <unordered_map>\n#line 2 \"digitDP/automaton.hpp\"\n#include\
-    \ <vector>\n\nstruct Automaton {\n    std::vector<std::vector<int>> delta;\n \
-    \   std::vector<bool> is_accept, is_reject;\n    int qsize;\n    int init;\n \
-    \   int alphabet_size = 10;\n    inline int next(int state, int c) const { return\
+  bundledCode: "#line 2 \"digitDP/ADFA/intersection_adfa.hpp\"\n#include <cassert>\n\
+    #include <tuple>\n#include <unordered_map>\n#line 2 \"digitDP/automaton.hpp\"\n\
+    #include <vector>\n\nstruct Automaton {\n    std::vector<std::vector<int>> delta;\n\
+    \    std::vector<bool> is_accept, is_reject;\n    int qsize;\n    int init;\n\
+    \    int alphabet_size = 10;\n    inline int next(int state, int c) const { return\
     \ delta[state][c]; }\n    inline bool accept(int state) const { return is_accept[state];\
     \ }\n    inline bool reject(int state) const { return is_reject[state]; }\n  \
-    \  inline int size() const {return qsize; }\n};\n#line 6 \"digitDP/intersection_adfa.hpp\"\
+    \  inline int size() const {return qsize; }\n};\n#line 6 \"digitDP/ADFA/intersection_adfa.hpp\"\
     \n\nAutomaton IntersectionADFA(const Automaton &adfa, const Automaton dfa) {\n\
     \    assert(adfa.alphabet_size == dfa.alphabet_size);\n    assert(adfa.init ==\
     \ 0);\n    std::vector<std::vector<std::tuple<int,int,int>>> v(adfa.size());\n\
@@ -56,15 +56,15 @@ data:
   dependsOn:
   - digitDP/automaton.hpp
   isVerificationFile: false
-  path: digitDP/intersection_adfa.hpp
+  path: digitDP/ADFA/intersection_adfa.hpp
   requiredBy: []
-  timestamp: '2022-11-05 08:40:29+09:00'
+  timestamp: '2022-11-05 08:49:24+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: digitDP/intersection_adfa.hpp
+documentation_of: digitDP/ADFA/intersection_adfa.hpp
 layout: document
 redirect_from:
-- /library/digitDP/intersection_adfa.hpp
-- /library/digitDP/intersection_adfa.hpp.html
-title: digitDP/intersection_adfa.hpp
+- /library/digitDP/ADFA/intersection_adfa.hpp
+- /library/digitDP/ADFA/intersection_adfa.hpp.html
+title: digitDP/ADFA/intersection_adfa.hpp
 ---

@@ -85,8 +85,8 @@ data:
   - test/yukicoder/0362.test.cpp
 documentation_of: digitDP/kadomatsu.hpp
 layout: document
-redirect_from:
-- /library/digitDP/kadomatsu.hpp
-- /library/digitDP/kadomatsu.hpp.html
-title: digitDP/kadomatsu.hpp
 ---
+
+yukicoderくらいでしか使わなそう
+
+状態最小ではないので注意

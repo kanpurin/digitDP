@@ -32,8 +32,8 @@ data:
     \            }\n            else {\n                split[block_id[v[i]]] = t;\n\
     \                block_id[v[i]] = t++;\n                block[block_id[v[i]]].insert(v[i]);\n\
     \            }\n        }\n        std::vector<std::pair<int,int>> res;\n    \
-    \    for (auto p : split) {\n            res.push_back(p);\n        }\n      \
-    \  return res;\n    }\n};\n"
+    \    for (auto p : split) {\n            res.emplace_back(p);\n        }\n   \
+    \     return res;\n    }\n};\n"
   code: "#pragma once\n#include <unordered_map>\n#include <unordered_set>\n#include\
     \ <vector>\n\nstruct PartitionRefinement {\n    std::unordered_map<int,std::unordered_set<int>>\
     \ block;\n    std::vector<int> block_id;\n    int t;\n\n    PartitionRefinement(int\
@@ -51,14 +51,14 @@ data:
     \            }\n            else {\n                split[block_id[v[i]]] = t;\n\
     \                block_id[v[i]] = t++;\n                block[block_id[v[i]]].insert(v[i]);\n\
     \            }\n        }\n        std::vector<std::pair<int,int>> res;\n    \
-    \    for (auto p : split) {\n            res.push_back(p);\n        }\n      \
-    \  return res;\n    }\n};"
+    \    for (auto p : split) {\n            res.emplace_back(p);\n        }\n   \
+    \     return res;\n    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: other/partition_refinement.hpp
   requiredBy:
   - digitDP/minimize.hpp
-  timestamp: '2022-11-04 09:42:55+09:00'
+  timestamp: '2022-11-06 05:46:02+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/0315.test.cpp

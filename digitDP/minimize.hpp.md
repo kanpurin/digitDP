@@ -42,22 +42,22 @@ data:
     \            }\n            else {\n                split[block_id[v[i]]] = t;\n\
     \                block_id[v[i]] = t++;\n                block[block_id[v[i]]].insert(v[i]);\n\
     \            }\n        }\n        std::vector<std::pair<int,int>> res;\n    \
-    \    for (auto p : split) {\n            res.push_back(p);\n        }\n      \
-    \  return res;\n    }\n};\n#line 6 \"digitDP/minimize.hpp\"\n\n// \u72B6\u614B\
+    \    for (auto p : split) {\n            res.emplace_back(p);\n        }\n   \
+    \     return res;\n    }\n};\n#line 6 \"digitDP/minimize.hpp\"\n\n// \u72B6\u614B\
     \u6700\u5C0F\u306E\u30AA\u30FC\u30C8\u30DE\u30C8\u30F3\nAutomaton Minimize(const\
     \ Automaton& dfa) {\n    std::vector<std::vector<std::vector<int>>> inv_delta(dfa.size(),std::vector<std::vector<int>>(dfa.alphabet_size));\n\
     \    for (int state = 0; state < dfa.size(); state++) {\n        for (int c =\
     \ 0; c < dfa.alphabet_size; c++) {\n            int t = dfa.delta[state][c];\n\
-    \            inv_delta[t][c].push_back(state);\n        }\n    }\n    PartitionRefinement\
+    \            inv_delta[t][c].emplace_back(state);\n        }\n    }\n    PartitionRefinement\
     \ pr(dfa.size());\n    std::vector<int> f;\n    for (int state = 0; state < dfa.size();\
-    \ state++)\n        if (dfa.accept(state)) f.push_back(state);\n    pr.partition(f);\n\
+    \ state++)\n        if (dfa.accept(state)) f.emplace_back(state);\n    pr.partition(f);\n\
     \    std::queue<std::pair<int,int>> que;\n    for (int c = 0; c < dfa.alphabet_size;\
     \ c++) {\n        que.push({c,0});\n        que.push({c,1});\n    }\n    while(!que.empty())\
     \ {\n        auto [c,b_id] = que.front(); que.pop();\n        std::vector<int>\
     \ v;\n        for (int state : pr.block[b_id])\n            for (int p : inv_delta[state][c])\n\
-    \                v.push_back(p);\n        if (v.size() == 0) continue;\n     \
-    \   auto par = pr.partition(v);\n        for (auto p : par) {\n            if\
-    \ (pr.block[p.first].size() > pr.block[p.second].size())\n                swap(p.first,p.second);\n\
+    \                v.emplace_back(p);\n        if (v.size() == 0) continue;\n  \
+    \      auto par = pr.partition(v);\n        for (auto p : par) {\n           \
+    \ if (pr.block[p.first].size() > pr.block[p.second].size())\n                swap(p.first,p.second);\n\
     \            if (pr.block[p.first].size() == 0) continue;\n            for (int\
     \ c2 = 0; c2 < dfa.alphabet_size; c2++)\n                que.push({c2,p.first});\n\
     \        }\n    }\n    std::map<int,int> mp;\n    for (int state = 0; state <\
@@ -79,16 +79,16 @@ data:
     \ {\n    std::vector<std::vector<std::vector<int>>> inv_delta(dfa.size(),std::vector<std::vector<int>>(dfa.alphabet_size));\n\
     \    for (int state = 0; state < dfa.size(); state++) {\n        for (int c =\
     \ 0; c < dfa.alphabet_size; c++) {\n            int t = dfa.delta[state][c];\n\
-    \            inv_delta[t][c].push_back(state);\n        }\n    }\n    PartitionRefinement\
+    \            inv_delta[t][c].emplace_back(state);\n        }\n    }\n    PartitionRefinement\
     \ pr(dfa.size());\n    std::vector<int> f;\n    for (int state = 0; state < dfa.size();\
-    \ state++)\n        if (dfa.accept(state)) f.push_back(state);\n    pr.partition(f);\n\
+    \ state++)\n        if (dfa.accept(state)) f.emplace_back(state);\n    pr.partition(f);\n\
     \    std::queue<std::pair<int,int>> que;\n    for (int c = 0; c < dfa.alphabet_size;\
     \ c++) {\n        que.push({c,0});\n        que.push({c,1});\n    }\n    while(!que.empty())\
     \ {\n        auto [c,b_id] = que.front(); que.pop();\n        std::vector<int>\
     \ v;\n        for (int state : pr.block[b_id])\n            for (int p : inv_delta[state][c])\n\
-    \                v.push_back(p);\n        if (v.size() == 0) continue;\n     \
-    \   auto par = pr.partition(v);\n        for (auto p : par) {\n            if\
-    \ (pr.block[p.first].size() > pr.block[p.second].size())\n                swap(p.first,p.second);\n\
+    \                v.emplace_back(p);\n        if (v.size() == 0) continue;\n  \
+    \      auto par = pr.partition(v);\n        for (auto p : par) {\n           \
+    \ if (pr.block[p.first].size() > pr.block[p.second].size())\n                swap(p.first,p.second);\n\
     \            if (pr.block[p.first].size() == 0) continue;\n            for (int\
     \ c2 = 0; c2 < dfa.alphabet_size; c2++)\n                que.push({c2,p.first});\n\
     \        }\n    }\n    std::map<int,int> mp;\n    for (int state = 0; state <\
@@ -110,7 +110,7 @@ data:
   isVerificationFile: false
   path: digitDP/minimize.hpp
   requiredBy: []
-  timestamp: '2022-11-04 09:56:25+09:00'
+  timestamp: '2022-11-06 05:46:02+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/0315.test.cpp

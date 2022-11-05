@@ -36,13 +36,14 @@ data:
     \   M.alphabet_size = A.alphabet_size;\n    std::vector<std::vector<int>> table(A.size(),\
     \ std::vector<int>(B.size(),-1));\n    std::vector<int> x = {A.init}, y = {B.init};\n\
     \    table[x[0]][y[0]] = 0;\n    M.init = 0;\n    for (int i = 0; i < (int)x.size();\
-    \ ++i) {\n        M.delta.push_back(std::vector<int>(M.alphabet_size, -1));\n\
-    \        M.is_accept.push_back(A.accept(x[i]) && B.accept(y[i]));\n        M.is_reject.push_back(A.reject(x[i])\
-    \ || B.reject(y[i]));\n        for (int c = 0; c < A.alphabet_size; c++) {\n \
-    \           int u = A.next(x[i],c), v = B.next(y[i],c);\n            if (table[u][v]\
-    \ == -1) {\n                table[u][v] = x.size();\n                x.push_back(u);\n\
-    \                y.push_back(v);\n            }\n            M.delta[i][c] = table[u][v];\n\
-    \        }\n    }\n    M.qsize = M.delta.size();\n    return M;\n}\n"
+    \ ++i) {\n        M.delta.emplace_back(std::vector<int>(M.alphabet_size, -1));\n\
+    \        M.is_accept.emplace_back(A.accept(x[i]) && B.accept(y[i]));\n       \
+    \ M.is_reject.emplace_back(A.reject(x[i]) || B.reject(y[i]));\n        for (int\
+    \ c = 0; c < A.alphabet_size; c++) {\n            int u = A.next(x[i],c), v =\
+    \ B.next(y[i],c);\n            if (table[u][v] == -1) {\n                table[u][v]\
+    \ = x.size();\n                x.emplace_back(u);\n                y.emplace_back(v);\n\
+    \            }\n            M.delta[i][c] = table[u][v];\n        }\n    }\n \
+    \   M.qsize = M.delta.size();\n    return M;\n}\n"
   code: "#pragma once\n#include \"digitDP/automaton.hpp\"\n\n// \u3069\u3061\u3089\
     \u306B\u3082\u53D7\u7406\u3055\u308C\u308B\u3088\u3046\u306A\u6587\u5B57\u5217\
     \u3092\u53D7\u7406\nAutomaton IntersectionAutomaton(const Automaton &A, const\
@@ -50,12 +51,12 @@ data:
     \ M;\n    M.alphabet_size = A.alphabet_size;\n    std::vector<std::vector<int>>\
     \ table(A.size(), std::vector<int>(B.size(),-1));\n    std::vector<int> x = {A.init},\
     \ y = {B.init};\n    table[x[0]][y[0]] = 0;\n    M.init = 0;\n    for (int i =\
-    \ 0; i < (int)x.size(); ++i) {\n        M.delta.push_back(std::vector<int>(M.alphabet_size,\
-    \ -1));\n        M.is_accept.push_back(A.accept(x[i]) && B.accept(y[i]));\n  \
-    \      M.is_reject.push_back(A.reject(x[i]) || B.reject(y[i]));\n        for (int\
-    \ c = 0; c < A.alphabet_size; c++) {\n            int u = A.next(x[i],c), v =\
-    \ B.next(y[i],c);\n            if (table[u][v] == -1) {\n                table[u][v]\
-    \ = x.size();\n                x.push_back(u);\n                y.push_back(v);\n\
+    \ 0; i < (int)x.size(); ++i) {\n        M.delta.emplace_back(std::vector<int>(M.alphabet_size,\
+    \ -1));\n        M.is_accept.emplace_back(A.accept(x[i]) && B.accept(y[i]));\n\
+    \        M.is_reject.emplace_back(A.reject(x[i]) || B.reject(y[i]));\n       \
+    \ for (int c = 0; c < A.alphabet_size; c++) {\n            int u = A.next(x[i],c),\
+    \ v = B.next(y[i],c);\n            if (table[u][v] == -1) {\n                table[u][v]\
+    \ = x.size();\n                x.emplace_back(u);\n                y.emplace_back(v);\n\
     \            }\n            M.delta[i][c] = table[u][v];\n        }\n    }\n \
     \   M.qsize = M.delta.size();\n    return M;\n}"
   dependsOn:
@@ -63,7 +64,7 @@ data:
   isVerificationFile: false
   path: digitDP/intersection.hpp
   requiredBy: []
-  timestamp: '2022-11-02 08:00:15+09:00'
+  timestamp: '2022-11-06 05:46:02+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1417.test.cpp

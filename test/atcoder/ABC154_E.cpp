@@ -1,5 +1,4 @@
 // "https://atcoder.jp/contests/abc154/tasks/abc154_e"
-#define IGNORE
 #include <bits/stdc++.h>
 using namespace std;
 using ll = long long;

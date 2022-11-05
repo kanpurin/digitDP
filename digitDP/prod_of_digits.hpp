@@ -38,7 +38,6 @@ private:
         init = (cnt_2+1)*(cnt_3+1)*(cnt_5+1)*(cnt_7+1);
         set_delta();
         set_is_accept();
-        set_is_reject();
     }
 
     void set_delta() {
@@ -64,10 +63,6 @@ private:
     void set_is_accept() {
         is_accept.resize(qsize);
         is_accept[_tostate(cnt_2,cnt_3,cnt_5,cnt_7)] = true;
-    }
-
-    void set_is_reject() {
-        is_reject.resize(qsize,false);
     }
 public:
     ProdOfDigitsAutomaton(long long N, int alpha_size = 10) : N(N) {

@@ -8,7 +8,6 @@ Monoid digitDP(const Automaton &adfa) {
     dp[adfa.init] = Monoid::e();
     Monoid ans;
     for (int state = 0; state < adfa.size(); state++) {
-        if (adfa.reject(state)) continue;
         for (int c = 0; c < adfa.alphabet_size; c++) {
             dp[adfa.next(state,c)] += dp[state]*c;
         }

@@ -13,7 +13,6 @@ Automaton IntersectionAutomaton(const Automaton &A, const Automaton &B) {
     for (int i = 0; i < (int)x.size(); ++i) {
         M.delta.emplace_back(M.alphabet_size, -1);
         M.is_accept.emplace_back(A.accept(x[i]) && B.accept(y[i]));
-        M.is_reject.emplace_back(A.reject(x[i]) || B.reject(y[i]));
         for (int c = 0; c < A.alphabet_size; c++) {
             int u = A.next(x[i],c), v = B.next(y[i],c);
             if (table[u][v] == -1) {

@@ -9,7 +9,6 @@ private:
         init = alphabet_size*3; 
         set_delta();
         set_is_accept();
-        set_is_reject();
     }
 
     void set_delta() {
@@ -54,11 +53,6 @@ private:
         for (int state = 0; state < alphabet_size*3; state++) {
             is_accept[state] = true;
         }
-    }
-
-    void set_is_reject() {
-        is_reject.resize(qsize,false);
-        is_reject[alphabet_size*3+1] = true;
     }
 public:
     ZigZagAutomaton(int alpha_size = 10) {

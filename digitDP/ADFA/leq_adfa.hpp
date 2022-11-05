@@ -15,7 +15,6 @@ private:
         init = 0;
         set_delta();
         set_is_accept();
-        set_is_reject();
     }
 
     void set_delta() {
@@ -45,10 +44,6 @@ private:
         is_accept[qsize-3] = true;
     }
 
-    void set_is_reject() {
-        is_reject.resize(qsize,false);
-        is_reject[qsize-1] = true;
-    }
 public:
     LeqADFA(std::string s, bool eq = true, int alpha_size = 10) : str(s),
                                                                   eq(eq) {

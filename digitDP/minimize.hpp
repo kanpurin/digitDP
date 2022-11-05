@@ -54,12 +54,10 @@ Automaton Minimize(const Automaton& dfa) {
     M.qsize = mp.size();
     M.delta.resize(M.qsize,std::vector<int>(M.alphabet_size));
     M.is_accept.resize(M.qsize);
-    M.is_reject.resize(M.qsize);
     for (int state = 0; state < dfa.size(); state++) {
         for (int c = 0; c < dfa.alphabet_size; c++)
             M.delta[to_state[state]][c] = to_state[dfa.next(state,c)];
         if (dfa.accept(state)) M.is_accept[to_state[state]] = true;
-        if (dfa.reject(state)) M.is_reject[to_state[state]] = true;
     }
     return M;
 }

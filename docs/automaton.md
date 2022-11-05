@@ -15,4 +15,3 @@ DFA $A=(Q,Σ,δ,q_0,F)$が受理する長さ$n$の全ての文字列$S$に対し
 - delta：delta[i][c]=$\delta(i,q)$
 - alphabet_size：$\lvert Σ\rvert$
 - accept：受理状態か
-- reject：受理状態への到達が不可能か(dead-state)

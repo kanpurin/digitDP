@@ -15,7 +15,6 @@ private:
         init = num+2;
         set_delta();
         set_is_accept();
-        set_is_reject();
     }
 
     void set_delta() {
@@ -39,11 +38,6 @@ private:
             }
             is_accept[num+2] = true;
         }
-    }
-
-    void set_is_reject() {
-        is_reject.resize(qsize,false);
-        is_reject[num+1] = true;
     }
 public:
     CountNumberAutomaton(std::vector<bool> flg, int num, bool eq = false, int alpha_size = 10) : flg(flg),

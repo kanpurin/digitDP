@@ -11,12 +11,11 @@ Monoid digitDP(const std::string &s, const Automaton &dfa, bool eq = 1) {
         std::vector<std::vector<Monoid>> dp2(2,std::vector<Monoid>(dfa.size(),Monoid::zero()));
         for (int tight = 0; tight <= 1; tight++) {
             for (int state = 0; state < dfa.size(); state++) {
-                if (dfa.reject(state) || dp[tight][state].undef) continue;
+                if (dp[tight][state].undef) continue;
                 int lim = (tight ? s[i] - '0' : dfa.alphabet_size - 1);
                 for (int c = 0; c <= lim; c++) {
                     int tight_ = tight && c == lim;
                     int state_ = dfa.next(state,c);
-                    if (dfa.reject(state_)) continue;
                     dp2[tight_][state_] += dp[tight][state]*c;
                 }
             }

@@ -18,7 +18,6 @@ Automaton IntersectionADFA(const Automaton &adfa, const Automaton dfa) {
                 mp[(long long)dfa_s*adfa.size()+i] = M.delta.size();
                 M.delta.emplace_back(std::vector<int>(adfa.alphabet_size));
                 M.is_accept.emplace_back(adfa.accept(i) && dfa.accept(dfa_s));
-                M.is_reject.emplace_back(adfa.reject(i) || dfa.reject(dfa_s));
                 for (int c = 0; c < adfa.alphabet_size; c++) {
                     v[adfa.next(i,c)].emplace_back(mp[(long long)dfa_s*adfa.size()+i],dfa.next(dfa_s,c),c);
                 }

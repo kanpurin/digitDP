@@ -41,6 +41,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: digitDP/prod_of_digits.hpp
     title: digitDP/prod_of_digits.hpp
+  - icon: ':warning:'
+    path: digitDP/sum_of_digits.hpp
+    title: digitDP/sum_of_digits.hpp
   - icon: ':heavy_check_mark:'
     path: digitDP/union.hpp
     title: digitDP/union.hpp
@@ -56,6 +59,9 @@ data:
   - icon: ':warning:'
     path: test/atcoder/ABC235_F.cpp
     title: test/atcoder/ABC235_F.cpp
+  - icon: ':warning:'
+    path: test/atcoder/EDPC_S.cpp
+    title: test/atcoder/EDPC_S.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0570.test.cpp
@@ -99,6 +105,7 @@ data:
   requiredBy:
   - test/atcoder/ABC007_D.cpp
   - test/atcoder/ABC235_F.cpp
+  - test/atcoder/EDPC_S.cpp
   - test/atcoder/ABC154_E.cpp
   - digitDP/intersection.hpp
   - digitDP/kadomatsu.hpp
@@ -107,6 +114,7 @@ data:
   - digitDP/forbidden.hpp
   - digitDP/minimize.hpp
   - digitDP/modulo.hpp
+  - digitDP/sum_of_digits.hpp
   - digitDP/include_all.hpp
   - digitDP/ADFA/intersection_adfa.hpp
   - digitDP/ADFA/leq_adfa.hpp

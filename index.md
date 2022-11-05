@@ -47,6 +47,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: digitDP/prod_of_digits.hpp
       title: digitDP/prod_of_digits.hpp
+    - icon: ':warning:'
+      path: digitDP/sum_of_digits.hpp
+      title: digitDP/sum_of_digits.hpp
     - icon: ':heavy_check_mark:'
       path: digitDP/union.hpp
       title: digitDP/union.hpp
@@ -72,6 +75,9 @@ data:
     - icon: ':warning:'
       path: test/atcoder/ABC235_F.cpp
       title: test/atcoder/ABC235_F.cpp
+    - icon: ':warning:'
+      path: test/atcoder/EDPC_S.cpp
+      title: test/atcoder/EDPC_S.cpp
   verificationCategories:
   - name: test/aoj
     pages:

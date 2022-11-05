@@ -8,6 +8,9 @@ data:
   - icon: ':warning:'
     path: test/atcoder/ABC235_F.cpp
     title: test/atcoder/ABC235_F.cpp
+  - icon: ':warning:'
+    path: test/atcoder/EDPC_S.cpp
+    title: test/atcoder/EDPC_S.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0570.test.cpp
@@ -110,6 +113,7 @@ data:
   path: other/mint.hpp
   requiredBy:
   - test/atcoder/ABC235_F.cpp
+  - test/atcoder/EDPC_S.cpp
   - test/atcoder/ABC154_E.cpp
   timestamp: '2022-11-02 07:08:37+09:00'
   verificationStatus: LIBRARY_ALL_AC

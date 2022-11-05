@@ -11,7 +11,7 @@ Automaton IntersectionAutomaton(const Automaton &A, const Automaton &B) {
     table[x[0]][y[0]] = 0;
     M.init = 0;
     for (int i = 0; i < (int)x.size(); ++i) {
-        M.delta.emplace_back(std::vector<int>(M.alphabet_size, -1));
+        M.delta.emplace_back(M.alphabet_size, -1);
         M.is_accept.emplace_back(A.accept(x[i]) && B.accept(y[i]));
         M.is_reject.emplace_back(A.reject(x[i]) || B.reject(y[i]));
         for (int c = 0; c < A.alphabet_size; c++) {

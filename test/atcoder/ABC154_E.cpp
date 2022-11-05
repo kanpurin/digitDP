@@ -4,7 +4,6 @@ using namespace std;
 using ll = long long;
 
 #include "digitDP/automaton.hpp"
-#include "digitDP/digit_dp_leq.hpp"
 #include "digitDP/count_number.hpp"
 #include "other/mint.hpp"
 #include "digitDP/digit_dp_leq.hpp"

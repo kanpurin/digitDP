@@ -54,8 +54,8 @@ data:
     path: test/atcoder/ABC154_E.cpp
     title: test/atcoder/ABC154_E.cpp
   - icon: ':warning:'
-    path: test/atcoder/HHKB2022_F.cpp
-    title: test/atcoder/HHKB2022_F.cpp
+    path: test/atcoder/ABC235_F.cpp
+    title: test/atcoder/ABC235_F.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0570.test.cpp
@@ -95,7 +95,7 @@ data:
   path: digitDP/automaton.hpp
   requiredBy:
   - test/atcoder/ABC007_D.cpp
-  - test/atcoder/HHKB2022_F.cpp
+  - test/atcoder/ABC235_F.cpp
   - test/atcoder/ABC154_E.cpp
   - digitDP/intersection.hpp
   - digitDP/kadomatsu.hpp

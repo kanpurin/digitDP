@@ -6,8 +6,8 @@ data:
     title: "\u30AA\u30FC\u30C8\u30DE\u30C8\u30F3"
   _extendedRequiredBy:
   - icon: ':warning:'
-    path: test/atcoder/HHKB2022_F.cpp
-    title: test/atcoder/HHKB2022_F.cpp
+    path: test/atcoder/ABC235_F.cpp
+    title: test/atcoder/ABC235_F.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0315.test.cpp
@@ -64,7 +64,7 @@ data:
   isVerificationFile: false
   path: digitDP/include_all.hpp
   requiredBy:
-  - test/atcoder/HHKB2022_F.cpp
+  - test/atcoder/ABC235_F.cpp
   timestamp: '2022-11-02 07:52:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

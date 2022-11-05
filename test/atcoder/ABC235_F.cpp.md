@@ -21,7 +21,7 @@ data:
   attributes:
     links:
     - https://atcoder.jp/contests/abc235/tasks/abc235_f
-  bundledCode: "#line 1 \"test/atcoder/HHKB2022_F.cpp\"\n// \"https://atcoder.jp/contests/abc235/tasks/abc235_f\"\
+  bundledCode: "#line 1 \"test/atcoder/ABC235_F.cpp\"\n// \"https://atcoder.jp/contests/abc235/tasks/abc235_f\"\
     \n#include <bits/stdc++.h>\nusing namespace std;\nusing ll = long long;\n\n#line\
     \ 3 \"digitDP/automaton.hpp\"\n\nstruct Automaton {\n    std::vector<std::vector<int>>\
     \ delta;\n    std::vector<bool> is_accept, is_reject;\n    int qsize;\n    int\
@@ -99,7 +99,7 @@ data:
     \                }\n            }\n        }\n        dp = move(dp2);\n    }\n\
     \    Monoid ans = Monoid::zero();\n    for (int tight = 0; tight <= eq; tight++)\n\
     \        for (int state = 0; state < dfa.size(); state++)\n            if (dfa.accept(state))\
-    \ ans += dp[tight][state];\n    return ans;\n}\n#line 10 \"test/atcoder/HHKB2022_F.cpp\"\
+    \ ans += dp[tight][state];\n    return ans;\n}\n#line 10 \"test/atcoder/ABC235_F.cpp\"\
     \n\nconstexpr int MOD = 998244353;\n\n// \u53D7\u7406\u3059\u308B\u6570\u306E\u7DCF\
     \u548C\nstruct Monoid {\n    using T = mint<MOD>;\n    T val;\n    T num;\n  \
     \  bool undef = true;\n    Monoid() { *this = zero(); }\n    Monoid(T val, T num,\
@@ -147,15 +147,15 @@ data:
   - digitDP/include_all.hpp
   - digitDP/digit_dp_leq.hpp
   isVerificationFile: false
-  path: test/atcoder/HHKB2022_F.cpp
+  path: test/atcoder/ABC235_F.cpp
   requiredBy: []
-  timestamp: '2022-11-05 09:46:28+09:00'
+  timestamp: '2022-11-05 09:47:28+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: test/atcoder/HHKB2022_F.cpp
+documentation_of: test/atcoder/ABC235_F.cpp
 layout: document
 redirect_from:
-- /library/test/atcoder/HHKB2022_F.cpp
-- /library/test/atcoder/HHKB2022_F.cpp.html
-title: test/atcoder/HHKB2022_F.cpp
+- /library/test/atcoder/ABC235_F.cpp
+- /library/test/atcoder/ABC235_F.cpp.html
+title: test/atcoder/ABC235_F.cpp
 ---

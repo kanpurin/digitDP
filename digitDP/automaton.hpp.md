@@ -50,6 +50,9 @@ data:
   - icon: ':warning:'
     path: test/atcoder/ABC007_D.cpp
     title: test/atcoder/ABC007_D.cpp
+  - icon: ':warning:'
+    path: test/atcoder/ABC154_E.cpp
+    title: test/atcoder/ABC154_E.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0570.test.cpp
@@ -89,6 +92,7 @@ data:
   path: digitDP/automaton.hpp
   requiredBy:
   - test/atcoder/ABC007_D.cpp
+  - test/atcoder/ABC154_E.cpp
   - digitDP/intersection.hpp
   - digitDP/kadomatsu.hpp
   - digitDP/digit_dp_leq.hpp

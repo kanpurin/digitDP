@@ -4,7 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: digitDP/automaton.hpp
     title: "\u30AA\u30FC\u30C8\u30DE\u30C8\u30F3"
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/atcoder/ABC154_E.cpp
+    title: test/atcoder/ABC154_E.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0362.test.cpp
@@ -75,7 +78,8 @@ data:
   - digitDP/automaton.hpp
   isVerificationFile: false
   path: digitDP/count_number.hpp
-  requiredBy: []
+  requiredBy:
+  - test/atcoder/ABC154_E.cpp
   timestamp: '2022-11-03 08:45:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

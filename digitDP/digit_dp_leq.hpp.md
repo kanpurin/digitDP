@@ -8,6 +8,9 @@ data:
   - icon: ':warning:'
     path: test/atcoder/ABC007_D.cpp
     title: test/atcoder/ABC007_D.cpp
+  - icon: ':warning:'
+    path: test/atcoder/ABC154_E.cpp
+    title: test/atcoder/ABC154_E.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0570.test.cpp
@@ -75,6 +78,7 @@ data:
   path: digitDP/digit_dp_leq.hpp
   requiredBy:
   - test/atcoder/ABC007_D.cpp
+  - test/atcoder/ABC154_E.cpp
   timestamp: '2022-11-02 07:45:23+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

@@ -66,6 +66,9 @@ data:
     - icon: ':warning:'
       path: test/atcoder/ABC007_D.cpp
       title: test/atcoder/ABC007_D.cpp
+    - icon: ':warning:'
+      path: test/atcoder/ABC154_E.cpp
+      title: test/atcoder/ABC154_E.cpp
   verificationCategories:
   - name: test/aoj
     pages:

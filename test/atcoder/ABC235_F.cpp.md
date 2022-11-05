@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: digitDP/automaton.hpp
     title: "\u30AA\u30FC\u30C8\u30DE\u30C8\u30F3"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: digitDP/digit_dp_leq.hpp
     title: digitDP/digit_dp_leq.hpp
   - icon: ':heavy_check_mark:'
@@ -24,10 +24,9 @@ data:
   bundledCode: "#line 1 \"test/atcoder/ABC235_F.cpp\"\n// \"https://atcoder.jp/contests/abc235/tasks/abc235_f\"\
     \n#include <bits/stdc++.h>\nusing namespace std;\nusing ll = long long;\n\n#line\
     \ 3 \"digitDP/automaton.hpp\"\n\nstruct Automaton {\n    std::vector<std::vector<int>>\
-    \ delta;\n    std::vector<bool> is_accept, is_reject;\n    int qsize;\n    int\
-    \ init;\n    int alphabet_size = 10;\n    inline int next(int state, int c) const\
-    \ { return delta[state][c]; }\n    inline bool accept(int state) const { return\
-    \ is_accept[state]; }\n    inline bool reject(int state) const { return is_reject[state];\
+    \ delta;\n    std::vector<bool> is_accept;\n    int qsize;\n    int init;\n  \
+    \  int alphabet_size = 10;\n    inline int next(int state, int c) const { return\
+    \ delta[state][c]; }\n    inline bool accept(int state) const { return is_accept[state];\
     \ }\n    inline int size() const {return qsize; }\n};\n#line 2 \"other/mint.hpp\"\
     \n\ntemplate< int MOD >\nstruct mint {\npublic:\n    unsigned int x;\n    mint()\
     \ : x(0) {}\n    mint(long long v) {\n        long long w = (long long)(v % (long\
@@ -71,34 +70,32 @@ data:
     \u542B\u3080\u6587\u5B57\u5217\u3092\u53D7\u7406\nstruct IncludeAllAutomaton :\
     \ public Automaton {\nprivate:\n    std::vector<int> elems;\n\n    void initializer()\
     \ { \n        qsize = 1+(1<<(int)elems.size());\n        init = (1<<(int)elems.size());\n\
-    \        set_delta();\n        set_is_accept();\n        set_is_reject();\n  \
-    \  }\n\n    void set_delta() {\n        delta.resize(qsize,std::vector<int>(alphabet_size));\n\
-    \        for (int state = 0; state < qsize; state++) {\n            for (int c\
-    \ = 0; c < alphabet_size; c++) {\n                if (state == init && c == 0)\
-    \ delta[state][c] = init;\n                else {\n                    delta[state][c]\
-    \ = state==init?0:state;\n                    for (int i = 0; i < (int)elems.size();\
-    \ i++) {\n                        if (c != elems[i]) continue;\n             \
-    \           delta[state][c] = delta[state][c]|1<<i;\n                        break;\n\
-    \                    }\n                }\n            }\n        }\n    }\n\n\
-    \    void set_is_accept() {\n        is_accept.resize(qsize,false);\n        is_accept[(1<<(int)elems.size())-1]\
-    \ = true;\n    }\n\n    void set_is_reject() {\n        is_reject.resize(qsize,false);\n\
-    \    }\npublic:\n    IncludeAllAutomaton(std::vector<int> elems, int alpha_size\
-    \ = 10) : elems(elems) {\n        alphabet_size = alpha_size;\n        initializer();\n\
-    \    }\n};\n#line 4 \"digitDP/digit_dp_leq.hpp\"\n\n// LeqAutomaton\u4ED8\u304D\
-    \u6841DP\ntemplate<typename Monoid>\nMonoid digitDP(const std::string &s, const\
-    \ Automaton &dfa, bool eq = 1) {\n    std::vector<std::vector<Monoid>> dp(2,std::vector<Monoid>(dfa.size(),Monoid::zero()));\n\
+    \        set_delta();\n        set_is_accept();\n    }\n\n    void set_delta()\
+    \ {\n        delta.resize(qsize,std::vector<int>(alphabet_size));\n        for\
+    \ (int state = 0; state < qsize; state++) {\n            for (int c = 0; c < alphabet_size;\
+    \ c++) {\n                if (state == init && c == 0) delta[state][c] = init;\n\
+    \                else {\n                    delta[state][c] = state==init?0:state;\n\
+    \                    for (int i = 0; i < (int)elems.size(); i++) {\n         \
+    \               if (c != elems[i]) continue;\n                        delta[state][c]\
+    \ = delta[state][c]|1<<i;\n                        break;\n                  \
+    \  }\n                }\n            }\n        }\n    }\n\n    void set_is_accept()\
+    \ {\n        is_accept.resize(qsize,false);\n        is_accept[(1<<(int)elems.size())-1]\
+    \ = true;\n    }\npublic:\n    IncludeAllAutomaton(std::vector<int> elems, int\
+    \ alpha_size = 10) : elems(elems) {\n        alphabet_size = alpha_size;\n   \
+    \     initializer();\n    }\n};\n#line 4 \"digitDP/digit_dp_leq.hpp\"\n\n// LeqAutomaton\u4ED8\
+    \u304D\u6841DP\ntemplate<typename Monoid>\nMonoid digitDP(const std::string &s,\
+    \ const Automaton &dfa, bool eq = 1) {\n    std::vector<std::vector<Monoid>> dp(2,std::vector<Monoid>(dfa.size(),Monoid::zero()));\n\
     \    dp[1][dfa.init] = Monoid::e();\n    for (int i = 0; i < (int)s.size(); i++)\
     \ {\n        std::vector<std::vector<Monoid>> dp2(2,std::vector<Monoid>(dfa.size(),Monoid::zero()));\n\
     \        for (int tight = 0; tight <= 1; tight++) {\n            for (int state\
-    \ = 0; state < dfa.size(); state++) {\n                if (dfa.reject(state) ||\
-    \ dp[tight][state].undef) continue;\n                int lim = (tight ? s[i] -\
-    \ '0' : dfa.alphabet_size - 1);\n                for (int c = 0; c <= lim; c++)\
-    \ {\n                    int tight_ = tight && c == lim;\n                   \
-    \ int state_ = dfa.next(state,c);\n                    if (dfa.reject(state_))\
-    \ continue;\n                    dp2[tight_][state_] += dp[tight][state]*c;\n\
-    \                }\n            }\n        }\n        dp = move(dp2);\n    }\n\
-    \    Monoid ans = Monoid::zero();\n    for (int tight = 0; tight <= eq; tight++)\n\
-    \        for (int state = 0; state < dfa.size(); state++)\n            if (dfa.accept(state))\
+    \ = 0; state < dfa.size(); state++) {\n                if (dp[tight][state].undef)\
+    \ continue;\n                int lim = (tight ? s[i] - '0' : dfa.alphabet_size\
+    \ - 1);\n                for (int c = 0; c <= lim; c++) {\n                  \
+    \  int tight_ = tight && c == lim;\n                    int state_ = dfa.next(state,c);\n\
+    \                    dp2[tight_][state_] += dp[tight][state]*c;\n            \
+    \    }\n            }\n        }\n        dp = move(dp2);\n    }\n    Monoid ans\
+    \ = Monoid::zero();\n    for (int tight = 0; tight <= eq; tight++)\n        for\
+    \ (int state = 0; state < dfa.size(); state++)\n            if (dfa.accept(state))\
     \ ans += dp[tight][state];\n    return ans;\n}\n#line 10 \"test/atcoder/ABC235_F.cpp\"\
     \n\nconstexpr int MOD = 998244353;\n\n// \u53D7\u7406\u3059\u308B\u6570\u306E\u7DCF\
     \u548C\nstruct Monoid {\n    using T = mint<MOD>;\n    T val;\n    T num;\n  \
@@ -149,7 +146,7 @@ data:
   isVerificationFile: false
   path: test/atcoder/ABC235_F.cpp
   requiredBy: []
-  timestamp: '2022-11-05 09:47:28+09:00'
+  timestamp: '2022-11-06 06:14:50+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: test/atcoder/ABC235_F.cpp

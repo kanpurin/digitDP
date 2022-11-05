@@ -17,13 +17,13 @@ data:
       title: digitDP/ADFA/leq_adfa.hpp
   - name: digitDP
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: digitDP/automaton.hpp
       title: "\u30AA\u30FC\u30C8\u30DE\u30C8\u30F3"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: digitDP/count_number.hpp
       title: digitDP/count_number.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: digitDP/digit_dp_leq.hpp
       title: digitDP/digit_dp_leq.hpp
     - icon: ':heavy_check_mark:'
@@ -32,10 +32,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: digitDP/include_all.hpp
       title: digitDP/include_all.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: digitDP/intersection.hpp
       title: digitDP/intersection.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: digitDP/kadomatsu.hpp
       title: digitDP/kadomatsu.hpp
     - icon: ':heavy_check_mark:'
@@ -89,7 +89,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/0315.test.cpp
       title: test/yukicoder/0315.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yukicoder/0362.test.cpp
       title: test/yukicoder/0362.test.cpp
     - icon: ':heavy_check_mark:'

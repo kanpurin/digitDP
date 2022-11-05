@@ -14,10 +14,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: digitDP/ADFA/leq_adfa.hpp
     title: digitDP/ADFA/leq_adfa.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: digitDP/count_number.hpp
     title: digitDP/count_number.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: digitDP/digit_dp_leq.hpp
     title: digitDP/digit_dp_leq.hpp
   - icon: ':heavy_check_mark:'
@@ -26,10 +26,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: digitDP/include_all.hpp
     title: digitDP/include_all.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: digitDP/intersection.hpp
     title: digitDP/intersection.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: digitDP/kadomatsu.hpp
     title: digitDP/kadomatsu.hpp
   - icon: ':heavy_check_mark:'
@@ -69,7 +69,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0315.test.cpp
     title: test/yukicoder/0315.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yukicoder/0362.test.cpp
     title: test/yukicoder/0362.test.cpp
   - icon: ':heavy_check_mark:'
@@ -81,23 +81,21 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1953.test.cpp
     title: test/yukicoder/1953.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"digitDP/automaton.hpp\"\n#include <vector>\n\nstruct Automaton\
-    \ {\n    std::vector<std::vector<int>> delta;\n    std::vector<bool> is_accept,\
-    \ is_reject;\n    int qsize;\n    int init;\n    int alphabet_size = 10;\n   \
-    \ inline int next(int state, int c) const { return delta[state][c]; }\n    inline\
-    \ bool accept(int state) const { return is_accept[state]; }\n    inline bool reject(int\
-    \ state) const { return is_reject[state]; }\n    inline int size() const {return\
+    \ {\n    std::vector<std::vector<int>> delta;\n    std::vector<bool> is_accept;\n\
+    \    int qsize;\n    int init;\n    int alphabet_size = 10;\n    inline int next(int\
+    \ state, int c) const { return delta[state][c]; }\n    inline bool accept(int\
+    \ state) const { return is_accept[state]; }\n    inline int size() const {return\
     \ qsize; }\n};\n"
   code: "#pragma once\n#include <vector>\n\nstruct Automaton {\n    std::vector<std::vector<int>>\
-    \ delta;\n    std::vector<bool> is_accept, is_reject;\n    int qsize;\n    int\
-    \ init;\n    int alphabet_size = 10;\n    inline int next(int state, int c) const\
-    \ { return delta[state][c]; }\n    inline bool accept(int state) const { return\
-    \ is_accept[state]; }\n    inline bool reject(int state) const { return is_reject[state];\
+    \ delta;\n    std::vector<bool> is_accept;\n    int qsize;\n    int init;\n  \
+    \  int alphabet_size = 10;\n    inline int next(int state, int c) const { return\
+    \ delta[state][c]; }\n    inline bool accept(int state) const { return is_accept[state];\
     \ }\n    inline int size() const {return qsize; }\n};"
   dependsOn: []
   isVerificationFile: false
@@ -123,8 +121,8 @@ data:
   - digitDP/count_number.hpp
   - digitDP/prod_of_digits.hpp
   - digitDP/zigzag.hpp
-  timestamp: '2022-11-02 07:08:37+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2022-11-06 06:14:50+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/1417.test.cpp
   - test/yukicoder/0362.test.cpp
@@ -149,4 +147,3 @@ DFA $A=(Q,Σ,δ,q_0,F)$が受理する長さ$n$の全ての文字列$S$に対し
 - delta：delta[i][c]=$\delta(i,q)$
 - alphabet_size：$\lvert Σ\rvert$
 - accept：受理状態か
-- reject：受理状態への到達が不可能か(dead-state)

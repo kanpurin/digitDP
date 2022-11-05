@@ -42,7 +42,7 @@ struct PartitionRefinement {
         }
         std::vector<std::pair<int,int>> res;
         for (auto p : split) {
-            res.push_back(p);
+            res.emplace_back(p);
         }
         return res;
     }

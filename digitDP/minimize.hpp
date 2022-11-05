@@ -10,13 +10,13 @@ Automaton Minimize(const Automaton& dfa) {
     for (int state = 0; state < dfa.size(); state++) {
         for (int c = 0; c < dfa.alphabet_size; c++) {
             int t = dfa.delta[state][c];
-            inv_delta[t][c].push_back(state);
+            inv_delta[t][c].emplace_back(state);
         }
     }
     PartitionRefinement pr(dfa.size());
     std::vector<int> f;
     for (int state = 0; state < dfa.size(); state++)
-        if (dfa.accept(state)) f.push_back(state);
+        if (dfa.accept(state)) f.emplace_back(state);
     pr.partition(f);
     std::queue<std::pair<int,int>> que;
     for (int c = 0; c < dfa.alphabet_size; c++) {
@@ -28,7 +28,7 @@ Automaton Minimize(const Automaton& dfa) {
         std::vector<int> v;
         for (int state : pr.block[b_id])
             for (int p : inv_delta[state][c])
-                v.push_back(p);
+                v.emplace_back(p);
         if (v.size() == 0) continue;
         auto par = pr.partition(v);
         for (auto p : par) {

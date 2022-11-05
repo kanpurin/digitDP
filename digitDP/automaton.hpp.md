@@ -47,6 +47,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: digitDP/zigzag.hpp
     title: digitDP/zigzag.hpp
+  - icon: ':warning:'
+    path: test/atcoder/ABC007_D.cpp
+    title: test/atcoder/ABC007_D.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0570.test.cpp
@@ -85,6 +88,7 @@ data:
   isVerificationFile: false
   path: digitDP/automaton.hpp
   requiredBy:
+  - test/atcoder/ABC007_D.cpp
   - digitDP/intersection.hpp
   - digitDP/kadomatsu.hpp
   - digitDP/digit_dp_leq.hpp

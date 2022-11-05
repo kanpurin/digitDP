@@ -61,6 +61,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: other/partition_refinement.hpp
       title: other/partition_refinement.hpp
+  - name: test/atcoder
+    pages:
+    - icon: ':warning:'
+      path: test/atcoder/ABC007_D.cpp
+      title: test/atcoder/ABC007_D.cpp
   verificationCategories:
   - name: test/aoj
     pages:

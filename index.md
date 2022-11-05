@@ -69,6 +69,9 @@ data:
     - icon: ':warning:'
       path: test/atcoder/ABC154_E.cpp
       title: test/atcoder/ABC154_E.cpp
+    - icon: ':warning:'
+      path: test/atcoder/HHKB2022_F.cpp
+      title: test/atcoder/HHKB2022_F.cpp
   verificationCategories:
   - name: test/aoj
     pages:

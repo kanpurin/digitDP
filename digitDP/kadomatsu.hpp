@@ -43,6 +43,9 @@ private:
                 }
             }
         }
+        for (int c = 0; c < alphabet_size; c++) {
+            delta[qsize-1][c] = qsize-1;
+        }
     }
 
     void set_is_accept() {

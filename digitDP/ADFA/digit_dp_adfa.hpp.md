@@ -1,14 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: digitDP/automaton.hpp
     title: "\u30AA\u30FC\u30C8\u30DE\u30C8\u30F3"
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/yukicoder/1953.test.cpp
+    title: test/yukicoder/1953.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"digitDP/automaton.hpp\"\n#include <vector>\n\nstruct Automaton\
@@ -18,14 +21,14 @@ data:
     \ bool accept(int state) const { return is_accept[state]; }\n    inline bool reject(int\
     \ state) const { return is_reject[state]; }\n    inline int size() const {return\
     \ qsize; }\n};\n#line 3 \"digitDP/ADFA/digit_dp_adfa.hpp\"\n\ntemplate<typename\
-    \ Monoid>\nMonoid digitDP(Automaton &adfa) {\n    assert(adfa.init == 0);\n  \
-    \  std::vector<Monoid> dp(adfa.size());\n    dp[adfa.init] = Monoid::e();\n  \
-    \  Monoid ans;\n    for (int state = 0; state < adfa.size(); state++) {\n    \
-    \    if (adfa.reject(state)) continue;\n        for (int c = 0; c < adfa.alphabet_size;\
+    \ Monoid>\nMonoid digitDP(const Automaton &adfa) {\n    assert(adfa.init == 0);\n\
+    \    std::vector<Monoid> dp(adfa.size());\n    dp[adfa.init] = Monoid::e();\n\
+    \    Monoid ans;\n    for (int state = 0; state < adfa.size(); state++) {\n  \
+    \      if (adfa.reject(state)) continue;\n        for (int c = 0; c < adfa.alphabet_size;\
     \ c++) {\n            dp[adfa.next(state,c)] += dp[state]*c;\n        }\n    \
     \    if (adfa.accept(state)) ans += dp[state];\n    }\n    return ans;\n}\n"
   code: "#pragma once\n#include \"digitDP/automaton.hpp\"\n\ntemplate<typename Monoid>\n\
-    Monoid digitDP(Automaton &adfa) {\n    assert(adfa.init == 0);\n    std::vector<Monoid>\
+    Monoid digitDP(const Automaton &adfa) {\n    assert(adfa.init == 0);\n    std::vector<Monoid>\
     \ dp(adfa.size());\n    dp[adfa.init] = Monoid::e();\n    Monoid ans;\n    for\
     \ (int state = 0; state < adfa.size(); state++) {\n        if (adfa.reject(state))\
     \ continue;\n        for (int c = 0; c < adfa.alphabet_size; c++) {\n        \
@@ -36,9 +39,10 @@ data:
   isVerificationFile: false
   path: digitDP/ADFA/digit_dp_adfa.hpp
   requiredBy: []
-  timestamp: '2022-11-05 08:49:24+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2022-11-05 10:01:25+09:00'
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/yukicoder/1953.test.cpp
 documentation_of: digitDP/ADFA/digit_dp_adfa.hpp
 layout: document
 redirect_from:

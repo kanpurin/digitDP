@@ -1,14 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: digitDP/automaton.hpp
     title: "\u30AA\u30FC\u30C8\u30DE\u30C8\u30F3"
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/yukicoder/1953.test.cpp
+    title: test/yukicoder/1953.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"digitDP/ADFA/leq_adfa.hpp\"\n#include <string>\n#include\
@@ -66,8 +69,9 @@ data:
   path: digitDP/ADFA/leq_adfa.hpp
   requiredBy: []
   timestamp: '2022-11-05 08:49:24+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/yukicoder/1953.test.cpp
 documentation_of: digitDP/ADFA/leq_adfa.hpp
 layout: document
 redirect_from:

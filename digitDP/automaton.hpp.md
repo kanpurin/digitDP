@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':x:'
     path: digitDP/ADFA/digit_dp_adfa.hpp
     title: digitDP/ADFA/digit_dp_adfa.hpp
   - icon: ':warning:'
@@ -11,7 +11,7 @@ data:
   - icon: ':warning:'
     path: digitDP/ADFA/intersection_adfa.hpp
     title: digitDP/ADFA/intersection_adfa.hpp
-  - icon: ':warning:'
+  - icon: ':x:'
     path: digitDP/ADFA/leq_adfa.hpp
     title: digitDP/ADFA/leq_adfa.hpp
   - icon: ':heavy_check_mark:'
@@ -72,9 +72,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1740.test.cpp
     title: test/yukicoder/1740.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/yukicoder/1953.test.cpp
+    title: test/yukicoder/1953.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"digitDP/automaton.hpp\"\n#include <vector>\n\nstruct Automaton\
@@ -113,11 +116,12 @@ data:
   - digitDP/prod_of_digits.hpp
   - digitDP/zigzag.hpp
   timestamp: '2022-11-02 07:08:37+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yukicoder/1417.test.cpp
   - test/yukicoder/0362.test.cpp
   - test/yukicoder/1740.test.cpp
+  - test/yukicoder/1953.test.cpp
   - test/yukicoder/0315.test.cpp
   - test/aoj/0570.test.cpp
 documentation_of: digitDP/automaton.hpp

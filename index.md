@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: digitDP/ADFA
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: digitDP/ADFA/digit_dp_adfa.hpp
       title: digitDP/ADFA/digit_dp_adfa.hpp
     - icon: ':warning:'
@@ -12,12 +12,12 @@ data:
     - icon: ':warning:'
       path: digitDP/ADFA/intersection_adfa.hpp
       title: digitDP/ADFA/intersection_adfa.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: digitDP/ADFA/leq_adfa.hpp
       title: digitDP/ADFA/leq_adfa.hpp
   - name: digitDP
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: digitDP/automaton.hpp
       title: "\u30AA\u30FC\u30C8\u30DE\u30C8\u30F3"
     - icon: ':heavy_check_mark:'
@@ -92,7 +92,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1740.test.cpp
       title: test/yukicoder/1740.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/1953.test.cpp
       title: test/yukicoder/1953.test.cpp
 layout: toppage

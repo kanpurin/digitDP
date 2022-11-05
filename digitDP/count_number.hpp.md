@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: digitDP/automaton.hpp
     title: "\u30AA\u30FC\u30C8\u30DE\u30C8\u30F3"
   _extendedRequiredBy:
@@ -9,15 +9,15 @@ data:
     path: test/atcoder/ABC154_E.cpp
     title: test/atcoder/ABC154_E.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/0362.test.cpp
     title: test/yukicoder/0362.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1740.test.cpp
     title: test/yukicoder/1740.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"digitDP/count_number.hpp\"\n#include <cassert>\n#line 2\
@@ -76,7 +76,7 @@ data:
   requiredBy:
   - test/atcoder/ABC154_E.cpp
   timestamp: '2022-11-06 06:14:50+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/0362.test.cpp
   - test/yukicoder/1740.test.cpp

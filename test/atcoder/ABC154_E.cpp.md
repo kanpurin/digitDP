@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: digitDP/automaton.hpp
     title: "\u30AA\u30FC\u30C8\u30DE\u30C8\u30F3"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: digitDP/count_number.hpp
     title: digitDP/count_number.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: digitDP/digit_dp_leq.hpp
     title: digitDP/digit_dp_leq.hpp
   - icon: ':heavy_check_mark:'

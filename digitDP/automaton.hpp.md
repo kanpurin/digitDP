@@ -14,10 +14,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: digitDP/ADFA/leq_adfa.hpp
     title: digitDP/ADFA/leq_adfa.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: digitDP/count_number.hpp
     title: digitDP/count_number.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: digitDP/digit_dp_leq.hpp
     title: digitDP/digit_dp_leq.hpp
   - icon: ':heavy_check_mark:'
@@ -26,10 +26,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: digitDP/include_all.hpp
     title: digitDP/include_all.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: digitDP/intersection.hpp
     title: digitDP/intersection.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: digitDP/kadomatsu.hpp
     title: digitDP/kadomatsu.hpp
   - icon: ':heavy_check_mark:'
@@ -69,7 +69,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0315.test.cpp
     title: test/yukicoder/0315.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/0362.test.cpp
     title: test/yukicoder/0362.test.cpp
   - icon: ':heavy_check_mark:'
@@ -81,9 +81,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1953.test.cpp
     title: test/yukicoder/1953.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"digitDP/automaton.hpp\"\n#include <vector>\n\nstruct Automaton\
@@ -122,7 +122,7 @@ data:
   - digitDP/prod_of_digits.hpp
   - digitDP/zigzag.hpp
   timestamp: '2022-11-06 06:14:50+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1417.test.cpp
   - test/yukicoder/0362.test.cpp

@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: digitDP/automaton.hpp
     title: "\u30AA\u30FC\u30C8\u30DE\u30C8\u30F3"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/0362.test.cpp
     title: test/yukicoder/0362.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"digitDP/kadomatsu.hpp\"\n#include <vector>\n#include <algorithm>\n\
@@ -39,7 +39,8 @@ data:
     \                       delta[(i+1)*11+(j+1)][k] = (j+1)*11+(k+1);\n         \
     \           }\n                    else {\n                        delta[(i+1)*11+(j+1)][k]\
     \ = qsize-1;\n                    }\n                }\n            }\n      \
-    \  }\n    }\n\n    void set_is_accept() {\n        is_accept.resize(qsize,false);\n\
+    \  }\n        for (int c = 0; c < alphabet_size; c++) {\n            delta[qsize-1][c]\
+    \ = qsize-1;\n        }\n    }\n\n    void set_is_accept() {\n        is_accept.resize(qsize,false);\n\
     \        for (int i = 0; i < 10; i++) {\n            for (int j = 0; j < 10; j++)\
     \ {\n                is_accept[(i+1)*11+(j+1)] = true;\n            }\n      \
     \  }\n    }\npublic:\n    KadomatsuAutomaton(int alpha_size = 10) {\n        alphabet_size\
@@ -64,7 +65,8 @@ data:
     \                       delta[(i+1)*11+(j+1)][k] = (j+1)*11+(k+1);\n         \
     \           }\n                    else {\n                        delta[(i+1)*11+(j+1)][k]\
     \ = qsize-1;\n                    }\n                }\n            }\n      \
-    \  }\n    }\n\n    void set_is_accept() {\n        is_accept.resize(qsize,false);\n\
+    \  }\n        for (int c = 0; c < alphabet_size; c++) {\n            delta[qsize-1][c]\
+    \ = qsize-1;\n        }\n    }\n\n    void set_is_accept() {\n        is_accept.resize(qsize,false);\n\
     \        for (int i = 0; i < 10; i++) {\n            for (int j = 0; j < 10; j++)\
     \ {\n                is_accept[(i+1)*11+(j+1)] = true;\n            }\n      \
     \  }\n    }\npublic:\n    KadomatsuAutomaton(int alpha_size = 10) {\n        alphabet_size\
@@ -74,8 +76,8 @@ data:
   isVerificationFile: false
   path: digitDP/kadomatsu.hpp
   requiredBy: []
-  timestamp: '2022-11-06 06:14:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2022-11-06 06:25:07+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/0362.test.cpp
 documentation_of: digitDP/kadomatsu.hpp

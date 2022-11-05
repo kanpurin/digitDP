@@ -2,7 +2,7 @@
 #include "digitDP/automaton.hpp"
 
 template<typename Monoid>
-Monoid digitDP(Automaton &adfa) {
+Monoid digitDP(const Automaton &adfa) {
     assert(adfa.init == 0);
     std::vector<Monoid> dp(adfa.size());
     dp[adfa.init] = Monoid::e();

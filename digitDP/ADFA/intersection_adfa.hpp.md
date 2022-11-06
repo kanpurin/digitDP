@@ -25,8 +25,8 @@ data:
     \    assert(adfa.alphabet_size == dfa.alphabet_size);\n    Automaton M;\n    M.alphabet_size\
     \ = adfa.alphabet_size;\n    unordered_map<ll,int> table;\n    std::vector<int>\
     \ x = {adfa.init}, y = {dfa.init};\n    table[x[0]*M.alphabet_size+y[0]] = 0;\n\
-    \    M.init = 0;\n    for (int i = 0; i < x.size(); ++i) {\n        M.delta.emplace_back(vector<int>(M.alphabet_size,\
-    \ -1));\n        M.is_accept.emplace_back(adfa.accept(x[i]) && dfa.accept(y[i]));\n\
+    \    M.init = 0;\n    for (int i = 0; i < x.size(); ++i) {\n        M.delta.emplace_back(M.alphabet_size,\
+    \ -1);\n        M.is_accept.emplace_back(adfa.accept(x[i]) && dfa.accept(y[i]));\n\
     \        for (int c = 0; c < adfa.alphabet_size; c++) {\n            int u = adfa.next(x[i],c),\
     \ v = dfa.next(y[i],c);\n            ll ps = (ll)u*M.alphabet_size+v;\n      \
     \      if (table.find(ps) == table.end()) {\n                table[ps] = x.size();\n\
@@ -38,8 +38,8 @@ data:
     \ &adfa, const Automaton &dfa) {\n    assert(adfa.alphabet_size == dfa.alphabet_size);\n\
     \    Automaton M;\n    M.alphabet_size = adfa.alphabet_size;\n    unordered_map<ll,int>\
     \ table;\n    std::vector<int> x = {adfa.init}, y = {dfa.init};\n    table[x[0]*M.alphabet_size+y[0]]\
-    \ = 0;\n    M.init = 0;\n    for (int i = 0; i < x.size(); ++i) {\n        M.delta.emplace_back(vector<int>(M.alphabet_size,\
-    \ -1));\n        M.is_accept.emplace_back(adfa.accept(x[i]) && dfa.accept(y[i]));\n\
+    \ = 0;\n    M.init = 0;\n    for (int i = 0; i < x.size(); ++i) {\n        M.delta.emplace_back(M.alphabet_size,\
+    \ -1);\n        M.is_accept.emplace_back(adfa.accept(x[i]) && dfa.accept(y[i]));\n\
     \        for (int c = 0; c < adfa.alphabet_size; c++) {\n            int u = adfa.next(x[i],c),\
     \ v = dfa.next(y[i],c);\n            ll ps = (ll)u*M.alphabet_size+v;\n      \
     \      if (table.find(ps) == table.end()) {\n                table[ps] = x.size();\n\
@@ -52,7 +52,7 @@ data:
   path: digitDP/ADFA/intersection_adfa.hpp
   requiredBy:
   - test/atcoder/EDPC_S.cpp
-  timestamp: '2022-11-06 10:09:17+09:00'
+  timestamp: '2022-11-07 02:36:55+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: digitDP/ADFA/intersection_adfa.hpp

@@ -20,13 +20,13 @@ data:
     - icon: ':warning:'
       path: digitDP/PairDFA/leq_digits_pair.hpp
       title: digitDP/PairDFA/leq_digits_pair.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: digitDP/PairDFA/pair_adfa.hpp
       title: digitDP/PairDFA/pair_adfa.hpp
     - icon: ':warning:'
       path: digitDP/PairDFA/pair_dfa.hpp
       title: digitDP/PairDFA/pair_dfa.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: digitDP/PairDFA/same_msd_pair.hpp
       title: digitDP/PairDFA/same_msd_pair.hpp
   - name: digitDP
@@ -115,6 +115,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/0362.test.cpp
       title: test/yukicoder/0362.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/0685.test.cpp
+      title: test/yukicoder/0685.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1417.test.cpp
       title: test/yukicoder/1417.test.cpp

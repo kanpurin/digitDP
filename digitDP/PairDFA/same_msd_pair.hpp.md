@@ -8,10 +8,13 @@ data:
   - icon: ':warning:'
     path: test/atcoder/ABC138_F.cpp
     title: test/atcoder/ABC138_F.cpp
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/0685.test.cpp
+    title: test/yukicoder/0685.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"digitDP/automaton.hpp\"\n#include <vector>\n\nstruct Automaton\
@@ -57,10 +60,11 @@ data:
   requiredBy:
   - test/atcoder/ABC138_F.cpp
   timestamp: '2022-11-06 10:57:34+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yukicoder/0685.test.cpp
 documentation_of: digitDP/PairDFA/same_msd_pair.hpp
 layout: document
 ---
 
-最上位桁(MSD)について$X_{MSD}=Y_{MSD}$となるような文字列対$(X,Y)$を受理するオートマトン
+最上位桁(MSD)の位置と文字が一致する文字列対$(X,Y)$を受理するオートマトン

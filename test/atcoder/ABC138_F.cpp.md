@@ -13,10 +13,10 @@ data:
   - icon: ':warning:'
     path: digitDP/PairDFA/leq_digits_pair.hpp
     title: digitDP/PairDFA/leq_digits_pair.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: digitDP/PairDFA/pair_adfa.hpp
     title: digitDP/PairDFA/pair_adfa.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: digitDP/PairDFA/same_msd_pair.hpp
     title: digitDP/PairDFA/same_msd_pair.hpp
   - icon: ':heavy_check_mark:'

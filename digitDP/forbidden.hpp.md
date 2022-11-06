@@ -10,6 +10,9 @@ data:
     title: test/atcoder/ABC007_D.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/yukicoder/0685.test.cpp
+    title: test/yukicoder/0685.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1417.test.cpp
     title: test/yukicoder/1417.test.cpp
   _isVerificationFailed: false
@@ -68,6 +71,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1417.test.cpp
+  - test/yukicoder/0685.test.cpp
 documentation_of: digitDP/forbidden.hpp
 layout: document
 redirect_from:

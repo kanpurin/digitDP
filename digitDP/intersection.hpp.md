@@ -22,6 +22,9 @@ data:
     path: test/yukicoder/0362.test.cpp
     title: test/yukicoder/0362.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/yukicoder/0685.test.cpp
+    title: test/yukicoder/0685.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1417.test.cpp
     title: test/yukicoder/1417.test.cpp
   _isVerificationFailed: false
@@ -74,6 +77,7 @@ data:
   verifiedWith:
   - test/yukicoder/1417.test.cpp
   - test/yukicoder/0362.test.cpp
+  - test/yukicoder/0685.test.cpp
   - test/yukicoder/0315.test.cpp
   - test/aoj/0570.test.cpp
 documentation_of: digitDP/intersection.hpp

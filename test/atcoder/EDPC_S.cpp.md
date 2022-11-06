@@ -65,25 +65,22 @@ data:
     \                                                                  eq(eq) {\n\
     \        assert(s.size() >= 1);\n        alphabet_size = alpha_size;\n       \
     \ initializer();\n    }\n};\n#line 6 \"digitDP/ADFA/intersection_adfa.hpp\"\n\n\
-    Automaton IntersectionADFA(const Automaton &adfa, const Automaton dfa) {\n   \
-    \ assert(adfa.alphabet_size == dfa.alphabet_size);\n    assert(adfa.init == 0);\n\
-    \    std::vector<std::vector<std::tuple<int,int,int>>> v(adfa.size());\n    Automaton\
-    \ M;\n    std::unordered_map<long long,int> mp;\n    v[0].emplace_back(-1,dfa.init,-1);\n\
-    \    for (int i = 0; i < adfa.size(); i++) {\n        for (int j = 0; j < v[i].size();\
-    \ j++) {\n            auto [n_s,dfa_s,c_] = v[i][j];\n            if (mp.find((long\
-    \ long)dfa_s*adfa.size()+i) == mp.end()) {\n                mp[(long long)dfa_s*adfa.size()+i]\
-    \ = M.delta.size();\n                M.delta.emplace_back(std::vector<int>(adfa.alphabet_size));\n\
-    \                M.is_accept.emplace_back(adfa.accept(i) && dfa.accept(dfa_s));\n\
-    \                for (int c = 0; c < adfa.alphabet_size; c++) {\n            \
-    \        v[adfa.next(i,c)].emplace_back(mp[(long long)dfa_s*adfa.size()+i],dfa.next(dfa_s,c),c);\n\
-    \                }\n            }\n            if (n_s != -1) M.delta[n_s][c_]\
-    \ = mp[(long long)dfa_s*adfa.size()+i];\n        }\n    }\n    M.alphabet_size\
-    \ = adfa.alphabet_size;\n    M.init = 0;\n    M.qsize = M.delta.size();\n    return\
-    \ M;\n}\n#line 3 \"digitDP/sum_of_digits.hpp\"\n\n// \u6841\u548C\u3092d\u3067\
-    \u5272\u3063\u305F\u4F59\u308A\nstruct SumOfDigitsAutomaton : public Automaton\
-    \ {\nprivate:\n    int mod;\n\n    void initializer() { \n        qsize = mod;\n\
-    \        init = 0;\n        set_delta();\n        set_is_accept();\n    }\n\n\
-    \    void set_delta() {\n        delta.resize(qsize,std::vector<int>(alphabet_size));\n\
+    Automaton IntersectionADFA(const Automaton &adfa, const Automaton &dfa) {\n  \
+    \  assert(adfa.alphabet_size == dfa.alphabet_size);\n    Automaton M;\n    M.alphabet_size\
+    \ = adfa.alphabet_size;\n    unordered_map<ll,int> table;\n    std::vector<int>\
+    \ x = {adfa.init}, y = {dfa.init};\n    table[x[0]*M.alphabet_size+y[0]] = 0;\n\
+    \    M.init = 0;\n    for (int i = 0; i < x.size(); ++i) {\n        M.delta.emplace_back(vector<int>(M.alphabet_size,\
+    \ -1));\n        M.is_accept.emplace_back(adfa.accept(x[i]) && dfa.accept(y[i]));\n\
+    \        for (int c = 0; c < adfa.alphabet_size; c++) {\n            int u = adfa.next(x[i],c),\
+    \ v = dfa.next(y[i],c);\n            ll ps = (ll)u*M.alphabet_size+v;\n      \
+    \      if (table.find(ps) == table.end()) {\n                table[ps] = x.size();\n\
+    \                x.emplace_back(u);\n                y.emplace_back(v);\n    \
+    \        }\n            M.delta[i][c] = table[ps];\n        }\n    }\n    M.qsize\
+    \ = M.delta.size();\n    return M;\n}\n#line 3 \"digitDP/sum_of_digits.hpp\"\n\
+    \n// \u6841\u548C\u3092d\u3067\u5272\u3063\u305F\u4F59\u308A\nstruct SumOfDigitsAutomaton\
+    \ : public Automaton {\nprivate:\n    int mod;\n\n    void initializer() { \n\
+    \        qsize = mod;\n        init = 0;\n        set_delta();\n        set_is_accept();\n\
+    \    }\n\n    void set_delta() {\n        delta.resize(qsize,std::vector<int>(alphabet_size));\n\
     \        for (int state = 0; state < qsize; state++) {\n            for (int c\
     \ = 0; c < alphabet_size; c++) {\n                delta[state][c] = (state+c)%mod;\n\
     \            }\n        }\n    }\n\n    void set_is_accept() {\n        is_accept.resize(qsize,false);\n\
@@ -172,7 +169,7 @@ data:
   isVerificationFile: false
   path: test/atcoder/EDPC_S.cpp
   requiredBy: []
-  timestamp: '2022-11-06 09:10:22+09:00'
+  timestamp: '2022-11-06 10:09:17+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: test/atcoder/EDPC_S.cpp

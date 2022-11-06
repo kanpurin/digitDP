@@ -11,8 +11,8 @@ data:
     path: digitDP/PairDFA/leq_digits_pair.hpp
     title: digitDP/PairDFA/leq_digits_pair.hpp
   - icon: ':warning:'
-    path: digitDP/PairDFA/pairdfa.hpp
-    title: digitDP/PairDFA/pairdfa.hpp
+    path: digitDP/PairDFA/pair_dfa.hpp
+    title: digitDP/PairDFA/pair_dfa.hpp
   - icon: ':heavy_check_mark:'
     path: digitDP/automaton.hpp
     title: "\u30AA\u30FC\u30C8\u30DE\u30C8\u30F3"
@@ -52,7 +52,7 @@ data:
     \ {\n        is_accept.resize(qsize,false);\n        is_accept[0] = true;\n  \
     \  }\n\npublic:\n    LeqDigitsPairAutomaton(int alpha_size = 10) : alpha_size(alpha_size)\
     \ {\n        alphabet_size = alpha_size*alpha_size;\n        initializer();\n\
-    \    }\n};\n#line 3 \"digitDP/PairDFA/pairdfa.hpp\"\n\nAutomaton PairAutomaoton(const\
+    \    }\n};\n#line 3 \"digitDP/PairDFA/pair_dfa.hpp\"\n\nAutomaton PairAutomaoton(const\
     \ Automaton &A, const Automaton &B) {\n    Automaton M;\n    M.alphabet_size =\
     \ A.alphabet_size*B.alphabet_size;\n    std::vector<std::vector<int>> table(A.size(),\
     \ std::vector<int>(B.size(),-1));\n    std::vector<int> x = {A.init}, y = {B.init};\n\
@@ -171,7 +171,7 @@ data:
     \ << endl;\n    return 0;\n}\n"
   code: "// \"https://atcoder.jp/contests/abc129/tasks/abc129_e\"\n#include <bits/stdc++.h>\n\
     using namespace std;\nusing ll = long long;\n\n#include \"digitDP/PairDFA/leq_digits_pair.hpp\"\
-    \n#include \"digitDP/PairDFA/pairdfa.hpp\"\n#include \"digitDP/ADFA/leq_adfa.hpp\"\
+    \n#include \"digitDP/PairDFA/pair_dfa.hpp\"\n#include \"digitDP/ADFA/leq_adfa.hpp\"\
     \n#include \"digitDP/ADFA/digit_dp_adfa.hpp\"\n#include \"digitDP/intersection.hpp\"\
     \n#include \"digitDP/simple.hpp\"\n#include \"other/mint.hpp\"\n\nconstexpr int\
     \ MOD = 1e9 + 7;\n\nstruct Monoid {\n    using T = mint<MOD>;\n    T val;\n  \
@@ -192,7 +192,7 @@ data:
   dependsOn:
   - digitDP/PairDFA/leq_digits_pair.hpp
   - digitDP/automaton.hpp
-  - digitDP/PairDFA/pairdfa.hpp
+  - digitDP/PairDFA/pair_dfa.hpp
   - digitDP/ADFA/leq_adfa.hpp
   - digitDP/ADFA/digit_dp_adfa.hpp
   - digitDP/intersection.hpp
@@ -201,7 +201,7 @@ data:
   isVerificationFile: false
   path: test/atcoder/ABC129_E.cpp
   requiredBy: []
-  timestamp: '2022-11-06 09:16:43+09:00'
+  timestamp: '2022-11-06 10:48:12+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: test/atcoder/ABC129_E.cpp

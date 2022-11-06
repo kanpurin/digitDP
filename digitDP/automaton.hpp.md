@@ -18,8 +18,14 @@ data:
     path: digitDP/PairDFA/leq_digits_pair.hpp
     title: digitDP/PairDFA/leq_digits_pair.hpp
   - icon: ':warning:'
-    path: digitDP/PairDFA/pairdfa.hpp
-    title: digitDP/PairDFA/pairdfa.hpp
+    path: digitDP/PairDFA/pair_adfa.hpp
+    title: digitDP/PairDFA/pair_adfa.hpp
+  - icon: ':warning:'
+    path: digitDP/PairDFA/pair_dfa.hpp
+    title: digitDP/PairDFA/pair_dfa.hpp
+  - icon: ':warning:'
+    path: digitDP/PairDFA/same_msd_pair.hpp
+    title: digitDP/PairDFA/same_msd_pair.hpp
   - icon: ':heavy_check_mark:'
     path: digitDP/count_number.hpp
     title: digitDP/count_number.hpp
@@ -65,6 +71,9 @@ data:
   - icon: ':warning:'
     path: test/atcoder/ABC129_E.cpp
     title: test/atcoder/ABC129_E.cpp
+  - icon: ':warning:'
+    path: test/atcoder/ABC138_F.cpp
+    title: test/atcoder/ABC138_F.cpp
   - icon: ':warning:'
     path: test/atcoder/ABC154_E.cpp
     title: test/atcoder/ABC154_E.cpp
@@ -114,6 +123,7 @@ data:
   path: digitDP/automaton.hpp
   requiredBy:
   - test/atcoder/ABC007_D.cpp
+  - test/atcoder/ABC138_F.cpp
   - test/atcoder/ABC235_F.cpp
   - test/atcoder/ABC129_E.cpp
   - test/atcoder/EDPC_S.cpp
@@ -125,8 +135,10 @@ data:
   - digitDP/forbidden.hpp
   - digitDP/minimize.hpp
   - digitDP/modulo.hpp
-  - digitDP/PairDFA/pairdfa.hpp
+  - digitDP/PairDFA/pair_dfa.hpp
   - digitDP/PairDFA/leq_digits_pair.hpp
+  - digitDP/PairDFA/same_msd_pair.hpp
+  - digitDP/PairDFA/pair_adfa.hpp
   - digitDP/sum_of_digits.hpp
   - digitDP/include_all.hpp
   - digitDP/simple.hpp

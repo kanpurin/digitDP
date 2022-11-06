@@ -9,6 +9,9 @@ data:
     path: test/atcoder/ABC129_E.cpp
     title: test/atcoder/ABC129_E.cpp
   - icon: ':warning:'
+    path: test/atcoder/ABC138_F.cpp
+    title: test/atcoder/ABC138_F.cpp
+  - icon: ':warning:'
     path: test/atcoder/EDPC_S.cpp
     title: test/atcoder/EDPC_S.cpp
   _extendedVerifiedWith:
@@ -71,6 +74,7 @@ data:
   isVerificationFile: false
   path: digitDP/ADFA/leq_adfa.hpp
   requiredBy:
+  - test/atcoder/ABC138_F.cpp
   - test/atcoder/ABC129_E.cpp
   - test/atcoder/EDPC_S.cpp
   timestamp: '2022-11-06 06:14:50+09:00'

@@ -8,6 +8,9 @@ data:
   - icon: ':warning:'
     path: test/atcoder/ABC129_E.cpp
     title: test/atcoder/ABC129_E.cpp
+  - icon: ':warning:'
+    path: test/atcoder/ABC138_F.cpp
+    title: test/atcoder/ABC138_F.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0570.test.cpp
@@ -64,6 +67,7 @@ data:
   isVerificationFile: false
   path: digitDP/intersection.hpp
   requiredBy:
+  - test/atcoder/ABC138_F.cpp
   - test/atcoder/ABC129_E.cpp
   timestamp: '2022-11-06 06:14:50+09:00'
   verificationStatus: LIBRARY_ALL_AC

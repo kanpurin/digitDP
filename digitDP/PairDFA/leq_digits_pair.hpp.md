@@ -8,6 +8,9 @@ data:
   - icon: ':warning:'
     path: test/atcoder/ABC129_E.cpp
     title: test/atcoder/ABC129_E.cpp
+  - icon: ':warning:'
+    path: test/atcoder/ABC138_F.cpp
+    title: test/atcoder/ABC138_F.cpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -50,6 +53,7 @@ data:
   isVerificationFile: false
   path: digitDP/PairDFA/leq_digits_pair.hpp
   requiredBy:
+  - test/atcoder/ABC138_F.cpp
   - test/atcoder/ABC129_E.cpp
   timestamp: '2022-11-06 09:10:22+09:00'
   verificationStatus: LIBRARY_NO_TESTS

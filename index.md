@@ -21,8 +21,14 @@ data:
       path: digitDP/PairDFA/leq_digits_pair.hpp
       title: digitDP/PairDFA/leq_digits_pair.hpp
     - icon: ':warning:'
-      path: digitDP/PairDFA/pairdfa.hpp
-      title: digitDP/PairDFA/pairdfa.hpp
+      path: digitDP/PairDFA/pair_adfa.hpp
+      title: digitDP/PairDFA/pair_adfa.hpp
+    - icon: ':warning:'
+      path: digitDP/PairDFA/pair_dfa.hpp
+      title: digitDP/PairDFA/pair_dfa.hpp
+    - icon: ':warning:'
+      path: digitDP/PairDFA/same_msd_pair.hpp
+      title: digitDP/PairDFA/same_msd_pair.hpp
   - name: digitDP
     pages:
     - icon: ':heavy_check_mark:'
@@ -83,6 +89,9 @@ data:
     - icon: ':warning:'
       path: test/atcoder/ABC129_E.cpp
       title: test/atcoder/ABC129_E.cpp
+    - icon: ':warning:'
+      path: test/atcoder/ABC138_F.cpp
+      title: test/atcoder/ABC138_F.cpp
     - icon: ':warning:'
       path: test/atcoder/ABC154_E.cpp
       title: test/atcoder/ABC154_E.cpp

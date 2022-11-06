@@ -19,7 +19,7 @@ data:
     \    int qsize;\n    int init;\n    int alphabet_size = 10;\n    inline int next(int\
     \ state, int c) const { return delta[state][c]; }\n    inline bool accept(int\
     \ state) const { return is_accept[state]; }\n    inline int size() const {return\
-    \ qsize; }\n};\n#line 3 \"digitDP/PairDFA/pairdfa.hpp\"\n\nAutomaton PairAutomaoton(const\
+    \ qsize; }\n};\n#line 3 \"digitDP/PairDFA/pair_dfa.hpp\"\n\nAutomaton PairAutomaoton(const\
     \ Automaton &A, const Automaton &B) {\n    Automaton M;\n    M.alphabet_size =\
     \ A.alphabet_size*B.alphabet_size;\n    std::vector<std::vector<int>> table(A.size(),\
     \ std::vector<int>(B.size(),-1));\n    std::vector<int> x = {A.init}, y = {B.init};\n\
@@ -48,13 +48,13 @@ data:
   dependsOn:
   - digitDP/automaton.hpp
   isVerificationFile: false
-  path: digitDP/PairDFA/pairdfa.hpp
+  path: digitDP/PairDFA/pair_dfa.hpp
   requiredBy:
   - test/atcoder/ABC129_E.cpp
-  timestamp: '2022-11-06 09:10:22+09:00'
+  timestamp: '2022-11-06 10:45:58+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: digitDP/PairDFA/pairdfa.hpp
+documentation_of: digitDP/PairDFA/pair_dfa.hpp
 layout: document
 ---
 

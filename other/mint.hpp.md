@@ -6,6 +6,9 @@ data:
     path: test/atcoder/ABC129_E.cpp
     title: test/atcoder/ABC129_E.cpp
   - icon: ':warning:'
+    path: test/atcoder/ABC138_F.cpp
+    title: test/atcoder/ABC138_F.cpp
+  - icon: ':warning:'
     path: test/atcoder/ABC154_E.cpp
     title: test/atcoder/ABC154_E.cpp
   - icon: ':warning:'
@@ -115,6 +118,7 @@ data:
   isVerificationFile: false
   path: other/mint.hpp
   requiredBy:
+  - test/atcoder/ABC138_F.cpp
   - test/atcoder/ABC235_F.cpp
   - test/atcoder/ABC129_E.cpp
   - test/atcoder/EDPC_S.cpp

@@ -4,7 +4,7 @@ using namespace std;
 using ll = long long;
 
 #include "digitDP/PairDFA/leq_digits_pair.hpp"
-#include "digitDP/PairDFA/pairdfa.hpp"
+#include "digitDP/PairDFA/pair_dfa.hpp"
 #include "digitDP/ADFA/leq_adfa.hpp"
 #include "digitDP/ADFA/digit_dp_adfa.hpp"
 #include "digitDP/intersection.hpp"

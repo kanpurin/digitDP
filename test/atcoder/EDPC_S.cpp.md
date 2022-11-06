@@ -33,18 +33,24 @@ data:
     \ delta;\n    std::vector<bool> is_accept;\n    int qsize;\n    int init;\n  \
     \  int alphabet_size = 10;\n    inline int next(int state, int c) const { return\
     \ delta[state][c]; }\n    inline bool accept(int state) const { return is_accept[state];\
-    \ }\n    inline int size() const {return qsize; }\n};\n#line 3 \"digitDP/ADFA/digit_dp_adfa.hpp\"\
-    \n\ntemplate<typename Monoid>\nMonoid digitDP(const Automaton &adfa) {\n    assert(adfa.init\
-    \ == 0);\n    std::vector<Monoid> dp(adfa.size());\n    dp[adfa.init] = Monoid::e();\n\
-    \    Monoid ans;\n    for (int state = 0; state < adfa.size(); state++) {\n  \
-    \      for (int c = 0; c < adfa.alphabet_size; c++) {\n            dp[adfa.next(state,c)]\
-    \ += dp[state]*c;\n        }\n        if (adfa.accept(state)) ans += dp[state];\n\
-    \    }\n    return ans;\n}\n#line 5 \"digitDP/ADFA/leq_adfa.hpp\"\n\n// \u8F9E\
-    \u66F8\u9806s\u4EE5\u4E0B\u306E\u9577\u3055|s|\u306E\u6587\u5B57\u5217\u3092\u53D7\
-    \u7406\n// ADFA\nstruct LeqADFA : public Automaton {\nprivate:\n    std::string\
-    \ str;\n    bool eq;\n\n    void initializer() { \n        qsize = (str.size()+1)*2;\n\
-    \        init = 0;\n        set_delta();\n        set_is_accept();\n    }\n\n\
-    \    void set_delta() {\n        delta.resize(qsize,std::vector<int>(alphabet_size,0));\n\
+    \ }\n    inline int size() const {return qsize; }\n};\n#line 4 \"digitDP/ADFA/digit_dp_adfa.hpp\"\
+    \n\n// ADFA\u304C\u53D7\u7406\u3059\u308B\u6587\u5B57\u5217\u3059\u3079\u3066\u306B\
+    \u3064\u3044\u3066\u6C42\u3081\u308B\ntemplate<typename Monoid>\nMonoid digitDP(const\
+    \ Automaton &adfa) {\n    std::vector<int> indeg(adfa.size());\n    for (int i\
+    \ = 0; i < adfa.size(); i++) {\n        for (int c = 0; c < adfa.alphabet_size;\
+    \ c++) {\n            indeg[adfa.next(i,c)]++;\n        }\n    }\n    std::vector<Monoid>\
+    \ dp(adfa.size());\n    dp[adfa.init] = Monoid::e();\n    Monoid ans;\n    std::queue<int>\
+    \ que;\n    que.push(adfa.init);\n    while(!que.empty()) {\n        int state\
+    \ = que.front(); que.pop();\n        for (int c = 0; c < adfa.alphabet_size; c++)\
+    \ {\n            int next_s = adfa.next(state,c);\n            dp[next_s] += dp[state]*c;\n\
+    \            indeg[next_s]--;\n            if (indeg[next_s] == 0) que.push(next_s);\n\
+    \        }\n        if (adfa.accept(state)) ans += dp[state];\n    }\n    return\
+    \ ans;\n}\n#line 5 \"digitDP/ADFA/leq_adfa.hpp\"\n\n// \u8F9E\u66F8\u9806s\u4EE5\
+    \u4E0B\u306E\u9577\u3055|s|\u306E\u6587\u5B57\u5217\u3092\u53D7\u7406\n// ADFA\n\
+    struct LeqADFA : public Automaton {\nprivate:\n    std::string str;\n    bool\
+    \ eq;\n\n    void initializer() { \n        qsize = (str.size()+1)*2;\n      \
+    \  init = 0;\n        set_delta();\n        set_is_accept();\n    }\n\n    void\
+    \ set_delta() {\n        delta.resize(qsize,std::vector<int>(alphabet_size,0));\n\
     \        for (int i = 0; i < (int)str.size(); i++) {\n            int state =\
     \ i<<1;\n            delta[state][str[i]-'0'] = state+2;\n            for (int\
     \ c = 0; c < str[i]-'0'; c++) {\n                delta[state][c] = state+1;\n\
@@ -166,7 +172,7 @@ data:
   isVerificationFile: false
   path: test/atcoder/EDPC_S.cpp
   requiredBy: []
-  timestamp: '2022-11-06 06:14:50+09:00'
+  timestamp: '2022-11-06 09:10:22+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: test/atcoder/EDPC_S.cpp

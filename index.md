@@ -15,6 +15,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: digitDP/ADFA/leq_adfa.hpp
       title: digitDP/ADFA/leq_adfa.hpp
+  - name: digitDP/PairDFA
+    pages:
+    - icon: ':warning:'
+      path: digitDP/PairDFA/leq_digits_pair.hpp
+      title: digitDP/PairDFA/leq_digits_pair.hpp
+    - icon: ':warning:'
+      path: digitDP/PairDFA/pairdfa.hpp
+      title: digitDP/PairDFA/pairdfa.hpp
   - name: digitDP
     pages:
     - icon: ':heavy_check_mark:'
@@ -47,6 +55,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: digitDP/prod_of_digits.hpp
       title: digitDP/prod_of_digits.hpp
+    - icon: ':warning:'
+      path: digitDP/simple.hpp
+      title: digitDP/simple.hpp
     - icon: ':warning:'
       path: digitDP/sum_of_digits.hpp
       title: digitDP/sum_of_digits.hpp

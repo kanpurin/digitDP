@@ -14,6 +14,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: digitDP/ADFA/leq_adfa.hpp
     title: digitDP/ADFA/leq_adfa.hpp
+  - icon: ':warning:'
+    path: digitDP/PairDFA/leq_digits_pair.hpp
+    title: digitDP/PairDFA/leq_digits_pair.hpp
+  - icon: ':warning:'
+    path: digitDP/PairDFA/pairdfa.hpp
+    title: digitDP/PairDFA/pairdfa.hpp
   - icon: ':heavy_check_mark:'
     path: digitDP/count_number.hpp
     title: digitDP/count_number.hpp
@@ -41,6 +47,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: digitDP/prod_of_digits.hpp
     title: digitDP/prod_of_digits.hpp
+  - icon: ':warning:'
+    path: digitDP/simple.hpp
+    title: digitDP/simple.hpp
   - icon: ':warning:'
     path: digitDP/sum_of_digits.hpp
     title: digitDP/sum_of_digits.hpp
@@ -112,8 +121,11 @@ data:
   - digitDP/forbidden.hpp
   - digitDP/minimize.hpp
   - digitDP/modulo.hpp
+  - digitDP/PairDFA/pairdfa.hpp
+  - digitDP/PairDFA/leq_digits_pair.hpp
   - digitDP/sum_of_digits.hpp
   - digitDP/include_all.hpp
+  - digitDP/simple.hpp
   - digitDP/ADFA/intersection_adfa.hpp
   - digitDP/ADFA/leq_adfa.hpp
   - digitDP/ADFA/digit_dp_adfa.hpp

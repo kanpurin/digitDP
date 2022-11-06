@@ -1,5 +1,5 @@
 ---
-documentation_of: ./digitDP/PairDFA/pairdfa.hpp
+documentation_of: ./digitDP/PairDFA/pair_dfa.hpp
 ---
 
 - 状態数：$Q_A\times Q_B$

@@ -4,7 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: digitDP/automaton.hpp
     title: "\u30AA\u30FC\u30C8\u30DE\u30C8\u30F3"
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/atcoder/ABC129_E.cpp
+    title: test/atcoder/ABC129_E.cpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -46,7 +49,8 @@ data:
   - digitDP/automaton.hpp
   isVerificationFile: false
   path: digitDP/PairDFA/leq_digits_pair.hpp
-  requiredBy: []
+  requiredBy:
+  - test/atcoder/ABC129_E.cpp
   timestamp: '2022-11-06 09:10:22+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

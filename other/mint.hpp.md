@@ -3,6 +3,9 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':warning:'
+    path: test/atcoder/ABC129_E.cpp
+    title: test/atcoder/ABC129_E.cpp
+  - icon: ':warning:'
     path: test/atcoder/ABC154_E.cpp
     title: test/atcoder/ABC154_E.cpp
   - icon: ':warning:'
@@ -113,6 +116,7 @@ data:
   path: other/mint.hpp
   requiredBy:
   - test/atcoder/ABC235_F.cpp
+  - test/atcoder/ABC129_E.cpp
   - test/atcoder/EDPC_S.cpp
   - test/atcoder/ABC154_E.cpp
   timestamp: '2022-11-02 07:08:37+09:00'

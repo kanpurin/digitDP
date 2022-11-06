@@ -1,6 +1,8 @@
 ---
-documentation_of: ./digitDP/PairDFA/pair_dfa.hpp
+documentation_of: ./digitDP/ProductofDFA/product_of_dfa.hpp
 ---
+
+オートマトンの直積
 
 - 状態数：$Q_A\times Q_B$
 - アルファベット：$Σ_A\times Σ_B$

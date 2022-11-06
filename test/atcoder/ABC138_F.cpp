@@ -6,9 +6,9 @@ using ll = long long;
 #include "digitDP/ADFA/digit_dp_adfa.hpp"
 #include "digitDP/ADFA/geq_adfa.hpp"
 #include "digitDP/ADFA/leq_adfa.hpp"
-#include "digitDP/PairDFA/pair_adfa.hpp"
-#include "digitDP/PairDFA/same_msd_pair.hpp"
-#include "digitDP/PairDFA/leq_digits_pair.hpp"
+#include "digitDP/ProductofDFA/product_of_adfa.hpp"
+#include "digitDP/ProductofDFA/same_msd.hpp"
+#include "digitDP/ProductofDFA/leq_digits.hpp"
 #include "digitDP/intersection.hpp"
 #include "other/mint.hpp"
 
@@ -60,9 +60,9 @@ int main() {
     string sr = binarynumber(r,64);
     auto M1 = GeqADFA(sl,true,2);
     auto M2 = LeqADFA(sr,true,2);
-    auto M3 = PairADFA(M1,M2);
-    auto M4 = SameMSDPairAutomaton(2);
-    auto M5 = LeqDigitsPairAutomaton(2);
+    auto M3 = ProductofADFA(M1,M2);
+    auto M4 = SameMSDAutomaton(2);
+    auto M5 = LeqDigitsAutomaton(2);
     auto M6 = IntersectionAutomaton(M4,M5);
     auto M7 = IntersectionAutomaton(M3,M6);
     cout << digitDP<Monoid>(M7) << endl;

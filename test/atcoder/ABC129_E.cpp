@@ -3,8 +3,8 @@
 using namespace std;
 using ll = long long;
 
-#include "digitDP/PairDFA/leq_digits_pair.hpp"
-#include "digitDP/PairDFA/pair_dfa.hpp"
+#include "digitDP/ProductofDFA/leq_digits.hpp"
+#include "digitDP/ProductofDFA/product_of_dfa.hpp"
 #include "digitDP/ADFA/leq_adfa.hpp"
 #include "digitDP/ADFA/digit_dp_adfa.hpp"
 #include "digitDP/intersection.hpp"
@@ -45,8 +45,8 @@ int main() {
     string L;cin >> L;
     auto M1 = SimpleAutomaton(2);
     auto M2 = LeqADFA(L,true,2);
-    auto M3 = PairAutomaoton(M1,M2);
-    auto M4 = LeqDigitsPairAutomaton(2);
+    auto M3 = ProductofAutomaoton(M1,M2);
+    auto M4 = LeqDigitsAutomaton(2);
     auto M5 = IntersectionAutomaton(M3,M4);
     cout << digitDP<Monoid>(M5) << endl;
     return 0;

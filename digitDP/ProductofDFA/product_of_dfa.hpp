@@ -1,7 +1,7 @@
 #pragma once
 #include "digitDP/automaton.hpp"
 
-Automaton PairAutomaoton(const Automaton &A, const Automaton &B) {
+Automaton ProductofAutomaoton(const Automaton &A, const Automaton &B) {
     Automaton M;
     M.alphabet_size = A.alphabet_size*B.alphabet_size;
     std::vector<std::vector<int>> table(A.size(), std::vector<int>(B.size(),-1));

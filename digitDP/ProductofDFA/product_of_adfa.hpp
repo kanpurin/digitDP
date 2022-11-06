@@ -2,7 +2,7 @@
 #include <unordered_map>
 #include "digitDP/automaton.hpp"
 
-Automaton PairADFA(const Automaton &adfa, const Automaton &dfa) {
+Automaton ProductofADFA(const Automaton &adfa, const Automaton &dfa) {
     Automaton M;
     M.alphabet_size = adfa.alphabet_size*dfa.alphabet_size;
     std::unordered_map<long long,int> table;

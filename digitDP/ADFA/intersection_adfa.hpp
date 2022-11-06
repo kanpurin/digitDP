@@ -13,7 +13,7 @@ Automaton IntersectionADFA(const Automaton &adfa, const Automaton &dfa) {
     table[x[0]*M.alphabet_size+y[0]] = 0;
     M.init = 0;
     for (int i = 0; i < x.size(); ++i) {
-        M.delta.emplace_back(vector<int>(M.alphabet_size, -1));
+        M.delta.emplace_back(M.alphabet_size, -1);
         M.is_accept.emplace_back(adfa.accept(x[i]) && dfa.accept(y[i]));
         for (int c = 0; c < adfa.alphabet_size; c++) {
             int u = adfa.next(x[i],c), v = dfa.next(y[i],c);

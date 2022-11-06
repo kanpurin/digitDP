@@ -11,14 +11,14 @@ data:
     path: digitDP/ADFA/leq_adfa.hpp
     title: digitDP/ADFA/leq_adfa.hpp
   - icon: ':warning:'
-    path: digitDP/PairDFA/leq_digits_pair.hpp
-    title: digitDP/PairDFA/leq_digits_pair.hpp
+    path: digitDP/ProductofDFA/leq_digits.hpp
+    title: digitDP/ProductofDFA/leq_digits.hpp
   - icon: ':heavy_check_mark:'
-    path: digitDP/PairDFA/pair_adfa.hpp
-    title: digitDP/PairDFA/pair_adfa.hpp
+    path: digitDP/ProductofDFA/product_of_adfa.hpp
+    title: digitDP/ProductofDFA/product_of_adfa.hpp
   - icon: ':heavy_check_mark:'
-    path: digitDP/PairDFA/same_msd_pair.hpp
-    title: digitDP/PairDFA/same_msd_pair.hpp
+    path: digitDP/ProductofDFA/same_msd.hpp
+    title: digitDP/ProductofDFA/same_msd.hpp
   - icon: ':heavy_check_mark:'
     path: digitDP/automaton.hpp
     title: "\u30AA\u30FC\u30C8\u30DE\u30C8\u30F3"
@@ -92,23 +92,23 @@ data:
     \npublic:\n    LeqADFA(std::string s, bool eq = true, int alpha_size = 10) : str(s),\n\
     \                                                                  eq(eq) {\n\
     \        assert(s.size() >= 1);\n        alphabet_size = alpha_size;\n       \
-    \ initializer();\n    }\n};\n#line 4 \"digitDP/PairDFA/pair_adfa.hpp\"\n\nAutomaton\
-    \ PairADFA(const Automaton &adfa, const Automaton &dfa) {\n    Automaton M;\n\
-    \    M.alphabet_size = adfa.alphabet_size*dfa.alphabet_size;\n    std::unordered_map<long\
-    \ long,int> table;\n    std::vector<int> x = {adfa.init}, y = {dfa.init};\n  \
-    \  table[(long long)x[0]*dfa.size()+y[0]] = 0;\n    M.init = 0;\n    for (int\
-    \ i = 0; i < x.size(); ++i) {\n        M.delta.emplace_back(M.alphabet_size, -1);\n\
-    \        M.is_accept.emplace_back(adfa.accept(x[i]) && dfa.accept(y[i]));\n  \
-    \      for (int c1 = 0; c1 < adfa.alphabet_size; c1++) {\n            for (int\
+    \ initializer();\n    }\n};\n#line 4 \"digitDP/ProductofDFA/product_of_adfa.hpp\"\
+    \n\nAutomaton ProductofADFA(const Automaton &adfa, const Automaton &dfa) {\n \
+    \   Automaton M;\n    M.alphabet_size = adfa.alphabet_size*dfa.alphabet_size;\n\
+    \    std::unordered_map<long long,int> table;\n    std::vector<int> x = {adfa.init},\
+    \ y = {dfa.init};\n    table[(long long)x[0]*dfa.size()+y[0]] = 0;\n    M.init\
+    \ = 0;\n    for (int i = 0; i < x.size(); ++i) {\n        M.delta.emplace_back(M.alphabet_size,\
+    \ -1);\n        M.is_accept.emplace_back(adfa.accept(x[i]) && dfa.accept(y[i]));\n\
+    \        for (int c1 = 0; c1 < adfa.alphabet_size; c1++) {\n            for (int\
     \ c2 = 0; c2 < dfa.alphabet_size; c2++) {\n                int c = c1*dfa.alphabet_size+c2;\n\
     \                int u = adfa.next(x[i],c1), v = dfa.next(y[i],c2);\n        \
     \        long long ps = (long long)u*dfa.size()+v;\n                if (table.find(ps)\
     \ == table.end()) {\n                    table[ps] = x.size();\n             \
     \       x.emplace_back(u);\n                    y.emplace_back(v);\n         \
     \       }\n                M.delta[i][c] = table[ps];\n            }\n       \
-    \ }\n    }\n    M.qsize = M.delta.size();\n    return M;\n}\n#line 3 \"digitDP/PairDFA/same_msd_pair.hpp\"\
+    \ }\n    }\n    M.qsize = M.delta.size();\n    return M;\n}\n#line 3 \"digitDP/ProductofDFA/same_msd.hpp\"\
     \n\n// \u6700\u4E0A\u4F4D\u6841\u306E\u6570\u304C\u4E00\u81F4\u3059\u308B\u6570\
-    \u5B57\u5BFE(x,y)\u3092\u53D7\u7406\nstruct SameMSDPairAutomaton : public Automaton\
+    \u5B57\u5BFE(x,y)\u3092\u53D7\u7406\nstruct SameMSDAutomaton : public Automaton\
     \ {\nprivate:\n    int alpha_size;\n    void initializer() { \n        qsize =\
     \ 3;\n        init = 0;\n        set_delta();\n        set_is_accept();\n    }\n\
     \n    void set_delta() {\n        delta.resize(qsize,std::vector<int>(alphabet_size));\n\
@@ -119,20 +119,20 @@ data:
     \     }\n        }\n        for (int c = 0; c < alphabet_size; c++) {\n      \
     \      delta[1][c] = 1;\n            delta[2][c] = 2;\n        }\n    }\n\n  \
     \  void set_is_accept() {\n        is_accept.resize(qsize,false);\n        is_accept[0]\
-    \ = is_accept[1] = true;\n    }\n\npublic:\n    SameMSDPairAutomaton(int alpha_size\
+    \ = is_accept[1] = true;\n    }\n\npublic:\n    SameMSDAutomaton(int alpha_size\
     \ = 10) : alpha_size(alpha_size) {\n        alphabet_size = alpha_size*alpha_size;\n\
-    \        initializer();\n    }\n};\n#line 3 \"digitDP/PairDFA/leq_digits_pair.hpp\"\
+    \        initializer();\n    }\n};\n#line 3 \"digitDP/ProductofDFA/leq_digits.hpp\"\
     \n\n// \u5168\u6841xi<=yi\u3068\u306A\u308B\u6587\u5B57\u5217\u5BFE(x,y)\u3092\
-    \u53D7\u7406\nstruct LeqDigitsPairAutomaton : public Automaton {\nprivate:\n \
-    \   int alpha_size;\n    void initializer() { \n        qsize = 2;\n        init\
-    \ = 0;\n        set_delta();\n        set_is_accept();\n    }\n\n    void set_delta()\
+    \u53D7\u7406\nstruct LeqDigitsAutomaton : public Automaton {\nprivate:\n    int\
+    \ alpha_size;\n    void initializer() { \n        qsize = 2;\n        init = 0;\n\
+    \        set_delta();\n        set_is_accept();\n    }\n\n    void set_delta()\
     \ {\n        delta.resize(qsize,std::vector<int>(alphabet_size));\n        for\
     \ (int c1 = 0; c1 < alpha_size; c1++) {\n            for (int c2 = 0; c2 < alpha_size;\
     \ c2++) {\n                int c = c1*alpha_size+c2;\n                if (c1 <=\
     \ c2) delta[0][c] = 0;\n                else delta[0][c] = 1;\n              \
     \  delta[1][c] = 1;\n            }\n        }\n    }\n\n    void set_is_accept()\
     \ {\n        is_accept.resize(qsize,false);\n        is_accept[0] = true;\n  \
-    \  }\n\npublic:\n    LeqDigitsPairAutomaton(int alpha_size = 10) : alpha_size(alpha_size)\
+    \  }\n\npublic:\n    LeqDigitsAutomaton(int alpha_size = 10) : alpha_size(alpha_size)\
     \ {\n        alphabet_size = alpha_size*alpha_size;\n        initializer();\n\
     \    }\n};\n#line 3 \"digitDP/intersection.hpp\"\n\n// \u3069\u3061\u3089\u306B\
     \u3082\u53D7\u7406\u3055\u308C\u308B\u3088\u3046\u306A\u6587\u5B57\u5217\u3092\
@@ -202,15 +202,15 @@ data:
     \ < len) res.push_back('0');\n    reverse(res.begin(), res.end());\n    return\
     \ res;\n}\n\nint main() {\n    ll l,r;cin >> l >> r;\n    string sl = binarynumber(l,64);\n\
     \    string sr = binarynumber(r,64);\n    auto M1 = GeqADFA(sl,true,2);\n    auto\
-    \ M2 = LeqADFA(sr,true,2);\n    auto M3 = PairADFA(M1,M2);\n    auto M4 = SameMSDPairAutomaton(2);\n\
-    \    auto M5 = LeqDigitsPairAutomaton(2);\n    auto M6 = IntersectionAutomaton(M4,M5);\n\
+    \ M2 = LeqADFA(sr,true,2);\n    auto M3 = ProductofADFA(M1,M2);\n    auto M4 =\
+    \ SameMSDAutomaton(2);\n    auto M5 = LeqDigitsAutomaton(2);\n    auto M6 = IntersectionAutomaton(M4,M5);\n\
     \    auto M7 = IntersectionAutomaton(M3,M6);\n    cout << digitDP<Monoid>(M7)\
     \ << endl;\n    return 0;\n}\n"
   code: "// \"https://atcoder.jp/contests/abc138/tasks/abc138_f\"\n#include <bits/stdc++.h>\n\
     using namespace std;\nusing ll = long long;\n\n#include \"digitDP/ADFA/digit_dp_adfa.hpp\"\
     \n#include \"digitDP/ADFA/geq_adfa.hpp\"\n#include \"digitDP/ADFA/leq_adfa.hpp\"\
-    \n#include \"digitDP/PairDFA/pair_adfa.hpp\"\n#include \"digitDP/PairDFA/same_msd_pair.hpp\"\
-    \n#include \"digitDP/PairDFA/leq_digits_pair.hpp\"\n#include \"digitDP/intersection.hpp\"\
+    \n#include \"digitDP/ProductofDFA/product_of_adfa.hpp\"\n#include \"digitDP/ProductofDFA/same_msd.hpp\"\
+    \n#include \"digitDP/ProductofDFA/leq_digits.hpp\"\n#include \"digitDP/intersection.hpp\"\
     \n#include \"other/mint.hpp\"\n\nconstexpr int MOD = 1e9 + 7;\n\nstruct Monoid\
     \ {\n    using T = mint<MOD>;\n    T val;\n    bool undef = true;\n    Monoid()\
     \ { *this = zero(); }\n    Monoid(T val, bool undef = true) : val(val),\n    \
@@ -228,8 +228,8 @@ data:
     \ < len) res.push_back('0');\n    reverse(res.begin(), res.end());\n    return\
     \ res;\n}\n\nint main() {\n    ll l,r;cin >> l >> r;\n    string sl = binarynumber(l,64);\n\
     \    string sr = binarynumber(r,64);\n    auto M1 = GeqADFA(sl,true,2);\n    auto\
-    \ M2 = LeqADFA(sr,true,2);\n    auto M3 = PairADFA(M1,M2);\n    auto M4 = SameMSDPairAutomaton(2);\n\
-    \    auto M5 = LeqDigitsPairAutomaton(2);\n    auto M6 = IntersectionAutomaton(M4,M5);\n\
+    \ M2 = LeqADFA(sr,true,2);\n    auto M3 = ProductofADFA(M1,M2);\n    auto M4 =\
+    \ SameMSDAutomaton(2);\n    auto M5 = LeqDigitsAutomaton(2);\n    auto M6 = IntersectionAutomaton(M4,M5);\n\
     \    auto M7 = IntersectionAutomaton(M3,M6);\n    cout << digitDP<Monoid>(M7)\
     \ << endl;\n    return 0;\n}"
   dependsOn:
@@ -237,15 +237,15 @@ data:
   - digitDP/automaton.hpp
   - digitDP/ADFA/geq_adfa.hpp
   - digitDP/ADFA/leq_adfa.hpp
-  - digitDP/PairDFA/pair_adfa.hpp
-  - digitDP/PairDFA/same_msd_pair.hpp
-  - digitDP/PairDFA/leq_digits_pair.hpp
+  - digitDP/ProductofDFA/product_of_adfa.hpp
+  - digitDP/ProductofDFA/same_msd.hpp
+  - digitDP/ProductofDFA/leq_digits.hpp
   - digitDP/intersection.hpp
   - other/mint.hpp
   isVerificationFile: false
   path: test/atcoder/ABC138_F.cpp
   requiredBy: []
-  timestamp: '2022-11-06 10:57:34+09:00'
+  timestamp: '2022-11-07 05:00:49+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: test/atcoder/ABC138_F.cpp

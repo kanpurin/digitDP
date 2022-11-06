@@ -15,17 +15,17 @@ data:
     path: digitDP/ADFA/leq_adfa.hpp
     title: digitDP/ADFA/leq_adfa.hpp
   - icon: ':warning:'
-    path: digitDP/PairDFA/leq_digits_pair.hpp
-    title: digitDP/PairDFA/leq_digits_pair.hpp
+    path: digitDP/ProductofDFA/leq_digits.hpp
+    title: digitDP/ProductofDFA/leq_digits.hpp
   - icon: ':heavy_check_mark:'
-    path: digitDP/PairDFA/pair_adfa.hpp
-    title: digitDP/PairDFA/pair_adfa.hpp
+    path: digitDP/ProductofDFA/product_of_adfa.hpp
+    title: digitDP/ProductofDFA/product_of_adfa.hpp
   - icon: ':warning:'
-    path: digitDP/PairDFA/pair_dfa.hpp
-    title: digitDP/PairDFA/pair_dfa.hpp
+    path: digitDP/ProductofDFA/product_of_dfa.hpp
+    title: digitDP/ProductofDFA/product_of_dfa.hpp
   - icon: ':heavy_check_mark:'
-    path: digitDP/PairDFA/same_msd_pair.hpp
-    title: digitDP/PairDFA/same_msd_pair.hpp
+    path: digitDP/ProductofDFA/same_msd.hpp
+    title: digitDP/ProductofDFA/same_msd.hpp
   - icon: ':heavy_check_mark:'
     path: digitDP/count_number.hpp
     title: digitDP/count_number.hpp
@@ -138,12 +138,12 @@ data:
   - digitDP/forbidden.hpp
   - digitDP/minimize.hpp
   - digitDP/modulo.hpp
-  - digitDP/PairDFA/pair_dfa.hpp
-  - digitDP/PairDFA/leq_digits_pair.hpp
-  - digitDP/PairDFA/same_msd_pair.hpp
-  - digitDP/PairDFA/pair_adfa.hpp
   - digitDP/sum_of_digits.hpp
   - digitDP/include_all.hpp
+  - digitDP/ProductofDFA/product_of_dfa.hpp
+  - digitDP/ProductofDFA/leq_digits.hpp
+  - digitDP/ProductofDFA/product_of_adfa.hpp
+  - digitDP/ProductofDFA/same_msd.hpp
   - digitDP/simple.hpp
   - digitDP/ADFA/intersection_adfa.hpp
   - digitDP/ADFA/leq_adfa.hpp

@@ -8,11 +8,11 @@ data:
     path: digitDP/ADFA/leq_adfa.hpp
     title: digitDP/ADFA/leq_adfa.hpp
   - icon: ':warning:'
-    path: digitDP/PairDFA/leq_digits_pair.hpp
-    title: digitDP/PairDFA/leq_digits_pair.hpp
+    path: digitDP/ProductofDFA/leq_digits.hpp
+    title: digitDP/ProductofDFA/leq_digits.hpp
   - icon: ':warning:'
-    path: digitDP/PairDFA/pair_dfa.hpp
-    title: digitDP/PairDFA/pair_dfa.hpp
+    path: digitDP/ProductofDFA/product_of_dfa.hpp
+    title: digitDP/ProductofDFA/product_of_dfa.hpp
   - icon: ':heavy_check_mark:'
     path: digitDP/automaton.hpp
     title: "\u30AA\u30FC\u30C8\u30DE\u30C8\u30F3"
@@ -39,20 +39,20 @@ data:
     \ delta;\n    std::vector<bool> is_accept;\n    int qsize;\n    int init;\n  \
     \  int alphabet_size = 10;\n    inline int next(int state, int c) const { return\
     \ delta[state][c]; }\n    inline bool accept(int state) const { return is_accept[state];\
-    \ }\n    inline int size() const {return qsize; }\n};\n#line 3 \"digitDP/PairDFA/leq_digits_pair.hpp\"\
+    \ }\n    inline int size() const {return qsize; }\n};\n#line 3 \"digitDP/ProductofDFA/leq_digits.hpp\"\
     \n\n// \u5168\u6841xi<=yi\u3068\u306A\u308B\u6587\u5B57\u5217\u5BFE(x,y)\u3092\
-    \u53D7\u7406\nstruct LeqDigitsPairAutomaton : public Automaton {\nprivate:\n \
-    \   int alpha_size;\n    void initializer() { \n        qsize = 2;\n        init\
-    \ = 0;\n        set_delta();\n        set_is_accept();\n    }\n\n    void set_delta()\
+    \u53D7\u7406\nstruct LeqDigitsAutomaton : public Automaton {\nprivate:\n    int\
+    \ alpha_size;\n    void initializer() { \n        qsize = 2;\n        init = 0;\n\
+    \        set_delta();\n        set_is_accept();\n    }\n\n    void set_delta()\
     \ {\n        delta.resize(qsize,std::vector<int>(alphabet_size));\n        for\
     \ (int c1 = 0; c1 < alpha_size; c1++) {\n            for (int c2 = 0; c2 < alpha_size;\
     \ c2++) {\n                int c = c1*alpha_size+c2;\n                if (c1 <=\
     \ c2) delta[0][c] = 0;\n                else delta[0][c] = 1;\n              \
     \  delta[1][c] = 1;\n            }\n        }\n    }\n\n    void set_is_accept()\
     \ {\n        is_accept.resize(qsize,false);\n        is_accept[0] = true;\n  \
-    \  }\n\npublic:\n    LeqDigitsPairAutomaton(int alpha_size = 10) : alpha_size(alpha_size)\
+    \  }\n\npublic:\n    LeqDigitsAutomaton(int alpha_size = 10) : alpha_size(alpha_size)\
     \ {\n        alphabet_size = alpha_size*alpha_size;\n        initializer();\n\
-    \    }\n};\n#line 3 \"digitDP/PairDFA/pair_dfa.hpp\"\n\nAutomaton PairAutomaoton(const\
+    \    }\n};\n#line 3 \"digitDP/ProductofDFA/product_of_dfa.hpp\"\n\nAutomaton ProductofAutomaoton(const\
     \ Automaton &A, const Automaton &B) {\n    Automaton M;\n    M.alphabet_size =\
     \ A.alphabet_size*B.alphabet_size;\n    std::vector<std::vector<int>> table(A.size(),\
     \ std::vector<int>(B.size(),-1));\n    std::vector<int> x = {A.init}, y = {B.init};\n\
@@ -166,12 +166,12 @@ data:
     \  return Monoid(a) *= c;\n    }\n    friend std::ostream& operator<<(std::ostream\
     \ &os, const Monoid &x) {\n        return os << x.val;\n    }\n};\n\nint main()\
     \ {\n    string L;cin >> L;\n    auto M1 = SimpleAutomaton(2);\n    auto M2 =\
-    \ LeqADFA(L,true,2);\n    auto M3 = PairAutomaoton(M1,M2);\n    auto M4 = LeqDigitsPairAutomaton(2);\n\
-    \    auto M5 = IntersectionAutomaton(M3,M4);\n    cout << digitDP<Monoid>(M5)\
-    \ << endl;\n    return 0;\n}\n"
+    \ LeqADFA(L,true,2);\n    auto M3 = ProductofAutomaoton(M1,M2);\n    auto M4 =\
+    \ LeqDigitsAutomaton(2);\n    auto M5 = IntersectionAutomaton(M3,M4);\n    cout\
+    \ << digitDP<Monoid>(M5) << endl;\n    return 0;\n}\n"
   code: "// \"https://atcoder.jp/contests/abc129/tasks/abc129_e\"\n#include <bits/stdc++.h>\n\
-    using namespace std;\nusing ll = long long;\n\n#include \"digitDP/PairDFA/leq_digits_pair.hpp\"\
-    \n#include \"digitDP/PairDFA/pair_dfa.hpp\"\n#include \"digitDP/ADFA/leq_adfa.hpp\"\
+    using namespace std;\nusing ll = long long;\n\n#include \"digitDP/ProductofDFA/leq_digits.hpp\"\
+    \n#include \"digitDP/ProductofDFA/product_of_dfa.hpp\"\n#include \"digitDP/ADFA/leq_adfa.hpp\"\
     \n#include \"digitDP/ADFA/digit_dp_adfa.hpp\"\n#include \"digitDP/intersection.hpp\"\
     \n#include \"digitDP/simple.hpp\"\n#include \"other/mint.hpp\"\n\nconstexpr int\
     \ MOD = 1e9 + 7;\n\nstruct Monoid {\n    using T = mint<MOD>;\n    T val;\n  \
@@ -186,13 +186,13 @@ data:
     \ Monoid& a, int c) {\n        return Monoid(a) *= c;\n    }\n    friend std::ostream&\
     \ operator<<(std::ostream &os, const Monoid &x) {\n        return os << x.val;\n\
     \    }\n};\n\nint main() {\n    string L;cin >> L;\n    auto M1 = SimpleAutomaton(2);\n\
-    \    auto M2 = LeqADFA(L,true,2);\n    auto M3 = PairAutomaoton(M1,M2);\n    auto\
-    \ M4 = LeqDigitsPairAutomaton(2);\n    auto M5 = IntersectionAutomaton(M3,M4);\n\
+    \    auto M2 = LeqADFA(L,true,2);\n    auto M3 = ProductofAutomaoton(M1,M2);\n\
+    \    auto M4 = LeqDigitsAutomaton(2);\n    auto M5 = IntersectionAutomaton(M3,M4);\n\
     \    cout << digitDP<Monoid>(M5) << endl;\n    return 0;\n}"
   dependsOn:
-  - digitDP/PairDFA/leq_digits_pair.hpp
+  - digitDP/ProductofDFA/leq_digits.hpp
   - digitDP/automaton.hpp
-  - digitDP/PairDFA/pair_dfa.hpp
+  - digitDP/ProductofDFA/product_of_dfa.hpp
   - digitDP/ADFA/leq_adfa.hpp
   - digitDP/ADFA/digit_dp_adfa.hpp
   - digitDP/intersection.hpp
@@ -201,7 +201,7 @@ data:
   isVerificationFile: false
   path: test/atcoder/ABC129_E.cpp
   requiredBy: []
-  timestamp: '2022-11-06 10:48:12+09:00'
+  timestamp: '2022-11-07 05:00:49+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: test/atcoder/ABC129_E.cpp

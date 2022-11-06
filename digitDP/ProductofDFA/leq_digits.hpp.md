@@ -22,21 +22,21 @@ data:
     \    int qsize;\n    int init;\n    int alphabet_size = 10;\n    inline int next(int\
     \ state, int c) const { return delta[state][c]; }\n    inline bool accept(int\
     \ state) const { return is_accept[state]; }\n    inline int size() const {return\
-    \ qsize; }\n};\n#line 3 \"digitDP/PairDFA/leq_digits_pair.hpp\"\n\n// \u5168\u6841\
+    \ qsize; }\n};\n#line 3 \"digitDP/ProductofDFA/leq_digits.hpp\"\n\n// \u5168\u6841\
     xi<=yi\u3068\u306A\u308B\u6587\u5B57\u5217\u5BFE(x,y)\u3092\u53D7\u7406\nstruct\
-    \ LeqDigitsPairAutomaton : public Automaton {\nprivate:\n    int alpha_size;\n\
-    \    void initializer() { \n        qsize = 2;\n        init = 0;\n        set_delta();\n\
+    \ LeqDigitsAutomaton : public Automaton {\nprivate:\n    int alpha_size;\n   \
+    \ void initializer() { \n        qsize = 2;\n        init = 0;\n        set_delta();\n\
     \        set_is_accept();\n    }\n\n    void set_delta() {\n        delta.resize(qsize,std::vector<int>(alphabet_size));\n\
     \        for (int c1 = 0; c1 < alpha_size; c1++) {\n            for (int c2 =\
     \ 0; c2 < alpha_size; c2++) {\n                int c = c1*alpha_size+c2;\n   \
     \             if (c1 <= c2) delta[0][c] = 0;\n                else delta[0][c]\
     \ = 1;\n                delta[1][c] = 1;\n            }\n        }\n    }\n\n\
     \    void set_is_accept() {\n        is_accept.resize(qsize,false);\n        is_accept[0]\
-    \ = true;\n    }\n\npublic:\n    LeqDigitsPairAutomaton(int alpha_size = 10) :\
-    \ alpha_size(alpha_size) {\n        alphabet_size = alpha_size*alpha_size;\n \
-    \       initializer();\n    }\n};\n"
+    \ = true;\n    }\n\npublic:\n    LeqDigitsAutomaton(int alpha_size = 10) : alpha_size(alpha_size)\
+    \ {\n        alphabet_size = alpha_size*alpha_size;\n        initializer();\n\
+    \    }\n};\n"
   code: "#pragma once\n#include \"digitDP/automaton.hpp\"\n\n// \u5168\u6841xi<=yi\u3068\
-    \u306A\u308B\u6587\u5B57\u5217\u5BFE(x,y)\u3092\u53D7\u7406\nstruct LeqDigitsPairAutomaton\
+    \u306A\u308B\u6587\u5B57\u5217\u5BFE(x,y)\u3092\u53D7\u7406\nstruct LeqDigitsAutomaton\
     \ : public Automaton {\nprivate:\n    int alpha_size;\n    void initializer()\
     \ { \n        qsize = 2;\n        init = 0;\n        set_delta();\n        set_is_accept();\n\
     \    }\n\n    void set_delta() {\n        delta.resize(qsize,std::vector<int>(alphabet_size));\n\
@@ -45,20 +45,20 @@ data:
     \             if (c1 <= c2) delta[0][c] = 0;\n                else delta[0][c]\
     \ = 1;\n                delta[1][c] = 1;\n            }\n        }\n    }\n\n\
     \    void set_is_accept() {\n        is_accept.resize(qsize,false);\n        is_accept[0]\
-    \ = true;\n    }\n\npublic:\n    LeqDigitsPairAutomaton(int alpha_size = 10) :\
-    \ alpha_size(alpha_size) {\n        alphabet_size = alpha_size*alpha_size;\n \
-    \       initializer();\n    }\n};\n"
+    \ = true;\n    }\n\npublic:\n    LeqDigitsAutomaton(int alpha_size = 10) : alpha_size(alpha_size)\
+    \ {\n        alphabet_size = alpha_size*alpha_size;\n        initializer();\n\
+    \    }\n};\n"
   dependsOn:
   - digitDP/automaton.hpp
   isVerificationFile: false
-  path: digitDP/PairDFA/leq_digits_pair.hpp
+  path: digitDP/ProductofDFA/leq_digits.hpp
   requiredBy:
   - test/atcoder/ABC138_F.cpp
   - test/atcoder/ABC129_E.cpp
-  timestamp: '2022-11-06 09:10:22+09:00'
+  timestamp: '2022-11-07 05:00:49+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: digitDP/PairDFA/leq_digits_pair.hpp
+documentation_of: digitDP/ProductofDFA/leq_digits.hpp
 layout: document
 ---
 

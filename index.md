@@ -15,20 +15,20 @@ data:
     - icon: ':heavy_check_mark:'
       path: digitDP/ADFA/leq_adfa.hpp
       title: digitDP/ADFA/leq_adfa.hpp
-  - name: digitDP/PairDFA
+  - name: digitDP/ProductofDFA
     pages:
     - icon: ':warning:'
-      path: digitDP/PairDFA/leq_digits_pair.hpp
-      title: digitDP/PairDFA/leq_digits_pair.hpp
+      path: digitDP/ProductofDFA/leq_digits.hpp
+      title: digitDP/ProductofDFA/leq_digits.hpp
     - icon: ':heavy_check_mark:'
-      path: digitDP/PairDFA/pair_adfa.hpp
-      title: digitDP/PairDFA/pair_adfa.hpp
+      path: digitDP/ProductofDFA/product_of_adfa.hpp
+      title: digitDP/ProductofDFA/product_of_adfa.hpp
     - icon: ':warning:'
-      path: digitDP/PairDFA/pair_dfa.hpp
-      title: digitDP/PairDFA/pair_dfa.hpp
+      path: digitDP/ProductofDFA/product_of_dfa.hpp
+      title: digitDP/ProductofDFA/product_of_dfa.hpp
     - icon: ':heavy_check_mark:'
-      path: digitDP/PairDFA/same_msd_pair.hpp
-      title: digitDP/PairDFA/same_msd_pair.hpp
+      path: digitDP/ProductofDFA/same_msd.hpp
+      title: digitDP/ProductofDFA/same_msd.hpp
   - name: digitDP
     pages:
     - icon: ':heavy_check_mark:'

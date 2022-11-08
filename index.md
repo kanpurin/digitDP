@@ -18,6 +18,9 @@ data:
   - name: digitDP/ProductofDFA
     pages:
     - icon: ':warning:'
+      path: digitDP/ProductofDFA/and_zero.hpp
+      title: digitDP/ProductofDFA/and_zero.hpp
+    - icon: ':warning:'
       path: digitDP/ProductofDFA/leq_digits.hpp
       title: digitDP/ProductofDFA/leq_digits.hpp
     - icon: ':heavy_check_mark:'
@@ -29,6 +32,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: digitDP/ProductofDFA/same_msd.hpp
       title: digitDP/ProductofDFA/same_msd.hpp
+    - icon: ':warning:'
+      path: digitDP/ProductofDFA/sum_leq.hpp
+      title: digitDP/ProductofDFA/sum_leq.hpp
   - name: digitDP
     pages:
     - icon: ':heavy_check_mark:'
@@ -89,6 +95,9 @@ data:
     - icon: ':warning:'
       path: test/atcoder/ABC129_E.cpp
       title: test/atcoder/ABC129_E.cpp
+    - icon: ':warning:'
+      path: test/atcoder/ABC129_E_2.cpp
+      title: test/atcoder/ABC129_E_2.cpp
     - icon: ':warning:'
       path: test/atcoder/ABC138_F.cpp
       title: test/atcoder/ABC138_F.cpp

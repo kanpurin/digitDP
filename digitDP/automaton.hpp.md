@@ -15,6 +15,9 @@ data:
     path: digitDP/ADFA/leq_adfa.hpp
     title: digitDP/ADFA/leq_adfa.hpp
   - icon: ':warning:'
+    path: digitDP/ProductofDFA/and_zero.hpp
+    title: digitDP/ProductofDFA/and_zero.hpp
+  - icon: ':warning:'
     path: digitDP/ProductofDFA/leq_digits.hpp
     title: digitDP/ProductofDFA/leq_digits.hpp
   - icon: ':heavy_check_mark:'
@@ -26,6 +29,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: digitDP/ProductofDFA/same_msd.hpp
     title: digitDP/ProductofDFA/same_msd.hpp
+  - icon: ':warning:'
+    path: digitDP/ProductofDFA/sum_leq.hpp
+    title: digitDP/ProductofDFA/sum_leq.hpp
   - icon: ':heavy_check_mark:'
     path: digitDP/count_number.hpp
     title: digitDP/count_number.hpp
@@ -71,6 +77,9 @@ data:
   - icon: ':warning:'
     path: test/atcoder/ABC129_E.cpp
     title: test/atcoder/ABC129_E.cpp
+  - icon: ':warning:'
+    path: test/atcoder/ABC129_E_2.cpp
+    title: test/atcoder/ABC129_E_2.cpp
   - icon: ':warning:'
     path: test/atcoder/ABC138_F.cpp
     title: test/atcoder/ABC138_F.cpp
@@ -131,6 +140,7 @@ data:
   - test/atcoder/ABC129_E.cpp
   - test/atcoder/EDPC_S.cpp
   - test/atcoder/ABC154_E.cpp
+  - test/atcoder/ABC129_E_2.cpp
   - digitDP/intersection.hpp
   - digitDP/kadomatsu.hpp
   - digitDP/digit_dp_leq.hpp
@@ -142,8 +152,10 @@ data:
   - digitDP/include_all.hpp
   - digitDP/ProductofDFA/product_of_dfa.hpp
   - digitDP/ProductofDFA/leq_digits.hpp
+  - digitDP/ProductofDFA/sum_leq.hpp
   - digitDP/ProductofDFA/product_of_adfa.hpp
   - digitDP/ProductofDFA/same_msd.hpp
+  - digitDP/ProductofDFA/and_zero.hpp
   - digitDP/simple.hpp
   - digitDP/ADFA/intersection_adfa.hpp
   - digitDP/ADFA/leq_adfa.hpp

@@ -9,6 +9,9 @@ data:
     path: test/atcoder/ABC129_E.cpp
     title: test/atcoder/ABC129_E.cpp
   - icon: ':warning:'
+    path: test/atcoder/ABC129_E_2.cpp
+    title: test/atcoder/ABC129_E_2.cpp
+  - icon: ':warning:'
     path: test/atcoder/ABC138_F.cpp
     title: test/atcoder/ABC138_F.cpp
   _extendedVerifiedWith:
@@ -72,6 +75,7 @@ data:
   requiredBy:
   - test/atcoder/ABC138_F.cpp
   - test/atcoder/ABC129_E.cpp
+  - test/atcoder/ABC129_E_2.cpp
   timestamp: '2022-11-06 06:14:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
